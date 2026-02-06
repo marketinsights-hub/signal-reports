@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Report: Notion — TrendLoom</title>
+    <style>
+        /* TrendLoom Signal Report — Hybrid Template v2 */
+
+        :root {
+            --primary: #1a1a2e;
+            --primary-light: #16213e;
+            --accent: #e94560;
+            --accent-light: #ff6b81;
+            --bg: #ffffff;
+            --text: #2d2d2d;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --light-bg: #f8f9fa;
+            --border: #e8e8e8;
+            --shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif', serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.65;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header .logo-text {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .header .report-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .header .meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .header .meta .company-name {
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: bold;
+        }
+
+        .header .meta .date {
+            display: block;
+            margin-top: 0.15rem;
+        }
+
+        /* --- SECTION LABELS --- */
+        .section-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        /* --- THE MIRROR --- */
+        .mirror-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .mirror-content {
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 3px solid var(--border);
+            padding-left: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .mirror-content p {
+            margin-bottom: 0.75rem;
+        }
+
+        .mirror-source {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        /* --- KEY FINDING BOX --- */
+        .key-finding {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.2);
+        }
+
+        .key-finding h2 {
+            font-size: 1.35rem;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: var(--accent-light);
+        }
+
+        .key-finding p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* --- THE GAP (VOID LANGUAGE) --- */
+        .gap-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .void-quote {
+            background: var(--light-bg);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .void-quote p {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .void-quote cite {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* --- THE PATTERN --- */
+        .pattern-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .pattern-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .pattern-section p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .evidence-line {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* --- PREDICTION / SHADOW SIGNAL --- */
+        .prediction-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .prediction-content {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .prediction-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- METHODOLOGY --- */
+        .methodology {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            font-style: italic;
+            letter-spacing: 0.3px;
+        }
+
+        /* --- CTA --- */
+        .cta-section {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.7rem 2rem;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: background 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-light);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .key-finding {
+                padding: 1.5rem;
+            }
+
+            .key-finding h2 {
+                font-size: 1.15rem;
+            }
+
+            .void-quote {
+                padding: 0.75rem 1rem;
+            }
+
+            .cta-section {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <div class="header">
+        <div class="logo-text">TrendLoom</div>
+        <div class="report-label">Signal Report</div>
+        <div class="meta">
+            <span class="company-name">Notion</span>
+            <span class="date">February 2026</span>
+        </div>
+    </div>
+
+    <!-- 2. THE MIRROR -->
+    <div class="mirror-section">
+        <div class="section-label">What You Say You Do</div>
+        <div class="mirror-content">
+            <p>&ldquo;You can even customize your own workspace from dozens of building blocks. Solve your problems your way, bounded only by your imagination.&rdquo;</p>
+            <p>&ldquo;They dreamt a future where computers could amplify imagination, augment intellect, and expand our thoughts far beyond text on paper.&rdquo;</p>
+            <span class="mirror-source">&mdash; notion.so/about</span>
+        </div>
+    </div>
+
+    <!-- 3. KEY FINDING BOX -->
+    <div class="key-finding">
+        <h2>The Quiet Reversal</h2>
+        <p>The users who made Notion a cultural phenomenon &mdash; the builders, the system architects, the template creators &mdash; are being quietly displaced by the very AI features designed to power Notion&rsquo;s next chapter.</p>
+    </div>
+
+    <!-- 4. THE GAP — VOID LANGUAGE SPECIMENS -->
+    <div class="gap-section">
+        <div class="section-label">What Your Market Is Actually Struggling With</div>
+
+        <div class="void-quote">
+            <p>&ldquo;Nothing is broken, it just feels&hellip; mentally heavier than it used to. I&rsquo;m honestly trying to understand if this is a normal phase or if I&rsquo;m just using it wrong.&rdquo;</p>
+            <cite>&mdash; Long-term user, Reddit r/Notion</cite>
+        </div>
+
+        <div class="void-quote">
+            <p>&ldquo;I loved notion when it was a simple site with lists, graphics, and everyone had to use their creativity to make templates. I wish they didn&rsquo;t fall into this full AI site.&rdquo;</p>
+            <cite>&mdash; Former paid user, Reddit r/Notion</cite>
+        </div>
+
+        <div class="void-quote">
+            <p>&ldquo;It seems extraordinary that Notion have gone ahead and baked AI into their product and not considered for a moment that some people will not want to use it at all, so they haven&rsquo;t built in a way to switch it off.&rdquo;</p>
+            <cite>&mdash; Business user, Reddit r/Notion</cite>
+        </div>
+    </div>
+
+    <!-- 5. THE PATTERN -->
+    <div class="pattern-section">
+        <div class="section-label">The Pattern</div>
+        <h3>The Quiet Reversal</h3>
+        <p>Notion was built on a founding promise: give people flexible building blocks and let them create whatever they need. That promise attracted a specific kind of user &mdash; the builder, the organizer, the person who finds satisfaction in structuring their world. These users didn&rsquo;t just adopt Notion; they evangelized it. They created the templates, the tutorials, the &ldquo;second brain&rdquo; movement. They were the growth engine.</p>
+        <p>Now Notion&rsquo;s AI pivot asks those same users to stop building and start delegating. &ldquo;Hand off your busywork,&rdquo; the homepage says. But for the builder, the building <em>is</em> the point. Users are contacting support to have AI features removed &mdash; and reporting that Notion runs 15&ndash;25% faster without them. The community that once buzzed with creative template showcases has gone quiet.</p>
+        <p class="evidence-line">Triangulated across Reddit r/Notion, Hacker News, G2, and Notion&rsquo;s own website copy.</p>
+    </div>
+
+    <!-- 7. PREDICTION / SHADOW SIGNAL -->
+    <div class="prediction-section">
+        <div class="section-label">What This Signals</div>
+        <div class="prediction-content">
+            <p>The builders aren&rsquo;t making noise on the way out &mdash; they&rsquo;re just going quiet. Community engagement is declining. Template creation energy is dissipating. The organic advocacy that powered Notion&rsquo;s growth is fading.</p>
+            <p>Meanwhile, a new wave of tools is absorbing the builder archetype by keeping the human at the center. If the builders leave, Notion keeps its enterprise contracts but loses the cultural engine that made it iconic. The question isn&rsquo;t whether the AI features work &mdash; it&rsquo;s whether anyone will still care enough to build in the workspace.</p>
+        </div>
+    </div>
+
+    <!-- 8. METHODOLOGY MICRO-LINE -->
+    <div class="methodology">
+        Based on 23 data points across Reddit, Hacker News, G2, and 17 pages of company web content, collected February 2026.
+    </div>
+
+    <!-- 9. CTA -->
+    <div class="cta-section">
+        <p>We identified 3 additional signal patterns in Notion&rsquo;s market position &mdash; including one around enterprise adoption friction that suggests a positioning window in Q2 2026.</p>
+        <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">See the Full Signal Map</a>
+    </div>
+
+</body>
+</html>
