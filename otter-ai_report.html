@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Report — Otter.ai | TrendLoom</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --primary-light: #16213e;
+            --accent: #e94560;
+            --accent-light: #ff6b81;
+            --bg: #ffffff;
+            --text: #2d2d2d;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --light-bg: #f8f9fa;
+            --border: #e8e8e8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif', serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.65;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header .logo-text {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .header .report-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .header .meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .section-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .mirror-section { margin-bottom: 2.5rem; }
+
+        .mirror-content {
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 3px solid var(--border);
+            padding-left: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .key-finding {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.2);
+        }
+
+        .key-finding h2 {
+            font-size: 1.35rem;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: var(--accent-light);
+        }
+
+        .key-finding p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .gap-section { margin-bottom: 2.5rem; }
+
+        .void-quote {
+            background: var(--light-bg);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .void-quote p {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .void-quote cite {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .pattern-section { margin-bottom: 2.5rem; }
+
+        .pattern-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .pattern-section p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .evidence-line {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .perception-section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 6px;
+            font-size: 0.93rem;
+        }
+
+        .perception-section p { margin-bottom: 0.5rem; }
+
+        .prediction-section { margin-bottom: 2.5rem; }
+
+        .prediction-content {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .prediction-content p { margin-bottom: 0.5rem; }
+
+        .methodology {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            font-style: italic;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.7rem 2rem;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: background 0.2s ease;
+        }
+
+        .cta-button:hover { background: var(--accent-light); }
+
+        @media (max-width: 600px) {
+            body { padding: 1.5rem 1rem; }
+            .key-finding { padding: 1.5rem; }
+            .key-finding h2 { font-size: 1.15rem; }
+            .void-quote { padding: 0.75rem 1rem; }
+            .cta-section { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo-text">TrendLoom</div>
+        <div class="report-label">Signal Report</div>
+        <div class="meta">
+            <span>Otter.ai &mdash; February 2026</span>
+        </div>
+    </div>
+
+    <div class="mirror-section">
+        <div class="section-label">What You Say You Do</div>
+        <div class="mirror-content">
+            <p>&ldquo;The world&rsquo;s smartest AI notetaker.&rdquo; You call the experience &ldquo;having your own executive assistant&rdquo; while your CEO says you&rsquo;ve built &ldquo;more than a meeting tool.&rdquo; Your homepage introduces a Notetaker, an assistant, and an SDR Agent that runs live sales demos&mdash;on a single page.</p>
+        </div>
+    </div>
+
+    <div class="key-finding">
+        <h2>The Quiet Takeover</h2>
+        <p>Your users adopted a note-taker&mdash;something that listens. What they got is an agent that acts: joining meetings uninvited, emailing transcripts to strangers, running sales demos on its own. Your market never consented to the shift.</p>
+    </div>
+
+    <div class="gap-section">
+        <div class="section-label">What Your Market Is Actually Struggling With</div>
+
+        <blockquote class="void-quote">
+            <p>&ldquo;The bot proceeded to join two confidential meetings on my behalf and record the whole thing, then email every member an absurd, inaccurate &lsquo;outline&rsquo; after.&rdquo;</p>
+            <cite>&mdash; Software professional, Hacker News</cite>
+        </blockquote>
+
+        <blockquote class="void-quote">
+            <p>&ldquo;Absolutely HATE Otter.ai. It&rsquo;s basically malware as it joins people&rsquo;s meetings and then invites everybody from the meeting to sign up.&rdquo;</p>
+            <cite>&mdash; B2B professional, Reddit</cite>
+        </blockquote>
+
+        <blockquote class="void-quote">
+            <p>&ldquo;Most features of the business tier are an overkill for my company&rsquo;s needs, but I&rsquo;m practically forced to subscribe to it.&rdquo;</p>
+            <cite>&mdash; Business user, pricing review</cite>
+        </blockquote>
+    </div>
+
+    <div class="pattern-section">
+        <div class="section-label">The Pattern</div>
+        <h3>The Quiet Takeover</h3>
+        <p>Otter built its base as a passive transcription tool. In the push to $100M ARR, it crossed a line users never drew&mdash;from recording meetings to joining them, from transcribing to emailing summaries to the whole room, from note-taker to autonomous agent.</p>
+        <p>A federal class-action lawsuit, &ldquo;malware&rdquo; comparisons across platforms, and mass account deletions aren&rsquo;t responses to a bad update. They&rsquo;re responses to a relationship that changed without consent.</p>
+        <p class="evidence-line">Triangulated across Reddit, Hacker News, Trustpilot, G2, federal court filings, and 6 additional platforms</p>
+    </div>
+
+    <div class="perception-section">
+        <div class="section-label">Where Otter Sits</div>
+        <p>Zoom, Microsoft, and Google are all embedding meeting AI natively. Competitors retreat into features. Otter alone advances into autonomous agents. But users who chose a standalone tool may have chosen it because they wanted something they could control.</p>
+    </div>
+
+    <div class="prediction-section">
+        <div class="section-label">What This Signals</div>
+        <div class="prediction-content">
+            <p>The AI meeting space is splitting into <strong>tools</strong> (do what you tell them) and <strong>agents</strong> (act on your behalf). Most users don&rsquo;t know they need to choose yet.</p>
+            <p>The companies that let users choose how much autonomy to grant&mdash;a clear permission layer for every action&mdash;will capture the trust premium this generation of AI meeting products is burning.</p>
+        </div>
+    </div>
+
+    <div class="methodology">
+        Based on analysis of 28 data points across Reddit, Hacker News, G2, Trustpilot, federal court filings, and 6 additional platforms collected February 2026
+    </div>
+
+    <div class="cta-section">
+        <p>We identified 3 additional signal patterns in Otter.ai&rsquo;s market&mdash;including one that reveals a timing advantage as the space splits into &ldquo;tools&rdquo; and &ldquo;agents.&rdquo;</p>
+        <p>The founders who name this split first own the next category.</p>
+        <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">Book a Conversation with Elena</a>
+    </div>
+
+</body>
+</html>
