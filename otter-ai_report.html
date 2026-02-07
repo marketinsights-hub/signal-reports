@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signal Report — Otter.ai | TrendLoom.io</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a1a2e;
-            --primary-light: #16213e;
-            --accent: #e94560;
-            --accent-light: #ff6b81;
-            --bg: #ffffff;
-            --text: #2d2d2d;
-            --text-light: #666666;
-            --text-muted: #999999;
-            --light-bg: #f8f9fa;
-            --border: #e8e8e8;
+            --primary: #262121;
+            --accent: #fe6037;
+            --accent-light: #ff7a56;
+            --bg: #fefaf6;
+            --text: #262121;
+            --text-light: #555555;
+            --text-muted: #888888;
+            --light-bg: #faebdc;
+            --border: #e8ddd0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', 'Noto Serif', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--text);
             background: var(--bg);
-            line-height: 1.65;
+            line-height: 1.7;
             max-width: 680px;
             margin: 0 auto;
             padding: 2.5rem 2rem;
@@ -38,27 +40,36 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .header .logo-text {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--accent);
+        .header .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
             text-decoration: none;
         }
 
-        .header .logo-text:hover {
-            color: var(--accent-light);
+        .header .logo-icon {
+            height: 20px;
+            width: auto;
+        }
+
+        .header .logo-text {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .header .logo-link:hover .logo-text {
+            color: var(--accent);
         }
 
         .header .report-label {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.65rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-top: 0.25rem;
+            margin-top: 0.35rem;
         }
 
         .header .meta {
@@ -68,7 +79,6 @@
         }
 
         .section-label {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.65rem;
             font-weight: 600;
             letter-spacing: 2px;
@@ -93,14 +103,15 @@
             padding: 2rem;
             border-radius: 8px;
             margin: 2.5rem 0;
-            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.2);
+            box-shadow: 8px 8px 16px 4px rgba(0,0,0,0.05);
         }
 
         .key-finding h2 {
             font-size: 1.35rem;
+            font-weight: 700;
             line-height: 1.3;
             margin-bottom: 0.75rem;
-            color: var(--accent-light);
+            color: var(--accent);
         }
 
         .key-finding p {
@@ -116,7 +127,7 @@
             border-left: 3px solid var(--accent);
             padding: 1rem 1.5rem;
             margin: 1rem 0;
-            border-radius: 0 4px 4px 0;
+            border-radius: 0 8px 8px 0;
         }
 
         .void-quote p {
@@ -132,13 +143,13 @@
             color: var(--text-muted);
             margin-top: 0.5rem;
             font-style: normal;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         .pattern-section { margin-bottom: 2.5rem; }
 
         .pattern-section h3 {
             font-size: 1.1rem;
+            font-weight: 700;
             margin-bottom: 0.75rem;
             color: var(--primary);
         }
@@ -149,7 +160,6 @@
         }
 
         .evidence-line {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.8rem;
             color: var(--text-muted);
             font-style: italic;
@@ -160,7 +170,7 @@
             margin-bottom: 2.5rem;
             padding: 1.5rem;
             background: var(--light-bg);
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 0.93rem;
         }
 
@@ -171,7 +181,7 @@
         .prediction-content {
             background: var(--light-bg);
             padding: 1.5rem;
-            border-radius: 6px;
+            border-radius: 8px;
             border: 1px solid var(--border);
             font-size: 0.95rem;
         }
@@ -179,7 +189,6 @@
         .prediction-content p { margin-bottom: 0.5rem; }
 
         .methodology {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 0.7rem;
             color: var(--text-muted);
             text-align: center;
@@ -206,16 +215,16 @@
         .cta-button {
             display: inline-block;
             margin-top: 0.75rem;
-            padding: 0.7rem 2rem;
+            padding: 0.75rem 2.5rem;
             background: var(--accent);
             color: #ffffff;
             text-decoration: none;
-            border-radius: 5px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            border-radius: 999px;
             font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
             transition: background 0.2s ease;
+            box-shadow: 8px 8px 16px 4px rgba(0,0,0,0.05);
         }
 
         .cta-button:hover { background: var(--accent-light); }
@@ -232,7 +241,10 @@
 <body>
 
     <div class="header">
-        <a href="https://trendloom.io" class="logo-text">TrendLoom.io</a>
+        <a href="https://trendloom.io" class="logo-link">
+            <img src="data:image/png;base64,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" class="logo-icon" alt="TrendLoom">
+            <span class="logo-text">TrendLoom.io</span>
+        </a>
         <div class="report-label">Signal Report</div>
         <div class="meta">
             <span>Otter.ai &mdash; February 2026</span>
