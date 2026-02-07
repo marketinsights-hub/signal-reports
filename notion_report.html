@@ -312,5 +312,39 @@
         <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">Book a Conversation with Elena</a>
     </div>
 
+    <!-- TrendLoom Analytics -->
+    <script>
+    (function(){
+      var E='{{ANALYTICS_ENDPOINT}}';
+      if(!E||E.indexOf('{{')=== 0)return;
+      var p=new URLSearchParams(location.search);
+      var base={
+        report:location.pathname.split('/').pop()||'',
+        utm_source:p.get('utm_source')||'',
+        utm_campaign:p.get('utm_campaign')||'',
+        utm_content:p.get('utm_content')||'',
+        page_url:location.href,
+        user_agent:navigator.userAgent||''
+      };
+      var t0=Date.now(),mxS=0;
+      function trk(){
+        var st=window.pageYOffset||document.documentElement.scrollTop;
+        var dh=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)-window.innerHeight;
+        if(dh>0){var pc=Math.round(st/dh*100);if(pc>mxS)mxS=pc;}
+      }
+      function send(ev){
+        var d={};for(var k in base)d[k]=base[k];
+        d.event=ev;d.scroll_pct=mxS;d.time_on_page=Math.round((Date.now()-t0)/1000);
+        if(navigator.sendBeacon){navigator.sendBeacon(E,JSON.stringify(d));}
+        else{var x=new XMLHttpRequest();x.open('POST',E,true);x.send(JSON.stringify(d));}
+      }
+      send('page_view');
+      window.addEventListener('scroll',trk,{passive:true});
+      var btns=document.querySelectorAll('.cta-button');
+      for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){send('cta_click');});}
+      document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')send('page_exit');});
+    })();
+    </script>
+
 </body>
 </html>
