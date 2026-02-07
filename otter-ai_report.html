@@ -334,7 +334,7 @@
         page_url:location.href,
         user_agent:navigator.userAgent||''
       };
-      var t0=Date.now(),mxS=0;
+      var t0=Date.now(),mxS=0,exited=false;
       function trk(){
         var st=window.pageYOffset||document.documentElement.scrollTop;
         var dh=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)-window.innerHeight;
@@ -350,7 +350,7 @@
       window.addEventListener('scroll',trk,{passive:true});
       var btns=document.querySelectorAll('.cta-button');
       for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){send('cta_click');});}
-      document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')send('page_exit');});
+      document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden'&&!exited){exited=true;send('page_exit');}});
     })();
     </script>
 
