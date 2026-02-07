@@ -320,9 +320,7 @@
       var p=new URLSearchParams(location.search);
       var base={
         report:location.pathname.split('/').pop()||'',
-        utm_source:p.get('utm_source')||'',
-        utm_campaign:p.get('utm_campaign')||'',
-        utm_content:p.get('utm_content')||'',
+        cid:p.get('cid')||'',
         page_url:location.href,
         user_agent:navigator.userAgent||''
       };
