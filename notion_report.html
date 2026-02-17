@@ -328,11 +328,12 @@
         <a href="privacy.html" style="font-size:0.7rem;color:#888888;text-decoration:none;">Privacy Policy</a>
     </div>
 
-    <!-- TrendLoom Analytics -->
+    <!-- TrendLoom Analytics — Airtable Direct -->
     <script>
     (function(){
-      var E='https://script.google.com/macros/s/AKfycbwvZrEzmzRI4RTq-29U-4kecyzaDcsWeDkmrYbH7KdREYXLH4Bg5ON5C6C4-u9zBLp0/exec';
-      if(!E||E.indexOf('{{')=== 0)return;
+      var T=atob('cGF0clVxOXdjSk9hMGNXdzUuNTk0YzRhMWI0OWZhNzZhNGZjNDQ3N2ZhY2ExY2VmNzY4MjNlYjk2OGEzOTY4ZGYzMGEwYjRhNDA3NzQ2MjlkNA==');
+      var B='appaz1L5luqIKZgHL';
+      var U='https://api.airtable.com/v0/'+B+'/PageViews';
       var p=new URLSearchParams(location.search);
       var base={
         report:location.pathname.split('/').pop()||'',
@@ -347,10 +348,14 @@
         if(dh>0){var pc=Math.round(st/dh*100);if(pc>mxS)mxS=pc;}
       }
       function send(ev){
-        var d={};for(var k in base)d[k]=base[k];
-        d.event=ev;d.scroll_pct=mxS;d.time_on_page=Math.round((Date.now()-t0)/1000);
-        if(navigator.sendBeacon){navigator.sendBeacon(E,JSON.stringify(d));}
-        else{var x=new XMLHttpRequest();x.open('POST',E,true);x.send(JSON.stringify(d));}
+        var fields={
+          'Report':base.report,'CID':base.cid,'Event':ev,
+          'Scroll %':mxS,'Time on Page':Math.round((Date.now()-t0)/1000),
+          'Page URL':base.page_url,'User Agent':base.user_agent.substring(0,500),
+          'Timestamp':new Date().toISOString()
+        };
+        fetch(U,{method:'POST',headers:{'Authorization':'Bearer '+T,'Content-Type':'application/json'},
+          body:JSON.stringify({fields:fields}),keepalive:true}).catch(function(){});
       }
       send('page_view');
       window.addEventListener('scroll',trk,{passive:true});
