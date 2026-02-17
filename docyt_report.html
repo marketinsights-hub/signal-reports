@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Report — TrendLoom.io</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* TrendLoom Signal Report — Template v3 (TrendLoom.io Design System) */
+
+        :root {
+            --primary: #262121;
+            --accent: #fe6037;
+            --accent-light: #ff7a56;
+            --bg: #fefaf6;
+            --text: #262121;
+            --text-light: #555555;
+            --text-muted: #888888;
+            --light-bg: #faebdc;
+            --border: #e8ddd0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+        }
+
+        .header .logo-icon {
+            height: 20px;
+            width: auto;
+        }
+
+        .header .logo-text {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .header .logo-link:hover .logo-text {
+            color: var(--accent);
+        }
+
+        .header .report-label {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+
+        .header .meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        /* --- SECTION LABELS --- */
+        .section-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        /* --- THE MIRROR --- */
+        .mirror-section { margin-bottom: 2.5rem; }
+
+        .mirror-content {
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 3px solid var(--border);
+            padding-left: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .mirror-content p { margin-bottom: 0.75rem; }
+
+        .mirror-source {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        /* --- KEY FINDING BOX --- */
+        .key-finding {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2.5rem 0;
+            box-shadow: 8px 8px 16px 4px rgba(0,0,0,0.05);
+        }
+
+        .key-finding h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+
+        .key-finding p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* --- THE GAP (VOID LANGUAGE) --- */
+        .gap-section { margin-bottom: 2.5rem; }
+
+        .void-quote {
+            background: var(--light-bg);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .void-quote p {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .void-quote cite {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: normal;
+        }
+
+        /* --- THE PATTERN --- */
+        .pattern-section { margin-bottom: 2.5rem; }
+
+        .pattern-section h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .pattern-section p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .evidence-line {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* --- PERCEPTION MAP (optional) --- */
+        .perception-section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            font-size: 0.93rem;
+        }
+
+        .perception-section p { margin-bottom: 0.5rem; }
+
+        .perception-section:empty { display: none; }
+
+        /* --- PREDICTION / SHADOW SIGNAL --- */
+        .prediction-section { margin-bottom: 2.5rem; }
+
+        .prediction-content {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .prediction-content p { margin-bottom: 0.5rem; }
+
+        /* --- METHODOLOGY --- */
+        .methodology {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            font-style: italic;
+            letter-spacing: 0.3px;
+        }
+
+        /* --- CTA --- */
+        .cta-section {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.75rem 2.5rem;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: background 0.2s ease;
+            box-shadow: 8px 8px 16px 4px rgba(0,0,0,0.05);
+        }
+
+        .cta-button:hover { background: var(--accent-light); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            body { padding: 1.5rem 1rem; }
+            .key-finding { padding: 1.5rem; }
+            .key-finding h2 { font-size: 1.15rem; }
+            .void-quote { padding: 0.75rem 1rem; }
+            .cta-section { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <div class="header">
+        <a href="https://trendloom.io" class="logo-link">
+            <img src="data:image/png;base64,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" class="logo-icon" alt="TrendLoom">
+            <span class="logo-text">TrendLoom.io</span>
+        </a>
+        <div class="report-label">Signal Report</div>
+        <div class="meta">
+            <span>Docyt &mdash; February 2026</span>
+        </div>
+    </div>
+
+    <!-- 2. THE MIRROR -->
+    <div class="mirror-section">
+        <div class="section-label">What You Say You Do</div>
+        <div class="mirror-content">
+            <p><strong>What they say they do:</strong>
+"Fully automated bookkeeping and accounting with AI." Their boldest promise: creating "The Million Dollar Accountant" — one practitioner + AI, 300+ clients, $1M in revenue.</p>
+<p><strong>What's remarkable:</strong> An ambitious platform with hospitality-vertical depth most competitors lack. G2: 4.7/5.</p>
+        </div>
+    </div>
+
+    <!-- 3. KEY FINDING BOX -->
+    <div class="key-finding">
+        <h2>The Million-Dollar Paradox</h2>
+        <p>Docyt promises to make accountants millionaires by automating everything they do — while offering that same automation directly to their clients as "self-serve bookkeeping." The path to $1M requires the technology that makes the accountant disappear.</p>
+    </div>
+
+    <!-- 4. THE GAP — VOID LANGUAGE SPECIMENS -->
+    <div class="gap-section">
+        <div class="section-label">What Your Market Is Actually Saying</div>
+        
+            <blockquote class="void-quote">
+                <p>"I don't know how to do anything else other than numbers — am I going to be unemployed with no other skills in the next ten years because AI took all the bookkeeping jobs?"</p>
+                <cite>— Bookkeeper, Reddit r/Bookkeeping</cite>
+            </blockquote>
+        
+            <blockquote class="void-quote">
+                <p>"Everyone keeps saying that accountants need to move into advisory work. That bookkeeping/tax is getting automated. That AI is coming for the historical stuff. But when I actually talk to CPA firms, almost all of them are still buried in tax returns, reconciliations, and cleanups. Is this shift to advisory actually happening or is it just talked about in conferences? Mostly hype?"</p>
+                <cite>— CPA, Reddit r/Accounting</cite>
+            </blockquote>
+        
+            <blockquote class="void-quote">
+                <p>"I am training my 'replacement' every time I match the downloaded bank transactions to what I've entered."</p>
+                <cite>— Accountant, Reddit r/Accounting</cite>
+            </blockquote>
+        
+    </div>
+
+    <!-- 5. THE PATTERN -->
+    <div class="pattern-section">
+        <div class="section-label">The Pattern</div>
+        <p><strong>The Million-Dollar Paradox</strong></p>
+<p>Docyt's homepage makes two promises that cannot both be true. To accountants: "Become a Million Dollar Accountant." To their clients: "Self-serve AI bookkeeping — no accountant needed." One practitioner + AI serving 300 clients at $299/month isn't empowerment — it's consolidation. The millionaire is the last one standing.</p>
+<p>Botkeeper straddled this same line — $90M raised, 98% accuracy — and shut down February 7, 2026.</p>
+        <p class="evidence-line">Triangulated across Docyt website (Voice Audit), Docyt CEO statements (CPA Practice Advisor), Reddit r/Accounting + r/Bookkeeping (Shadow Sanctuaries), G2 Reviews (Structured Reviews), and industry press (Botkeeper shutdown + CPA reactions).</p>
+    </div>
+
+    <!-- 6. PERCEPTION MAP (optional — remove this block if not applicable) -->
+    <div class="perception-section">
+        
+    </div>
+
+    <!-- 7. PREDICTION / SHADOW SIGNAL -->
+    <div class="prediction-section">
+        <div class="section-label">What This Signals</div>
+        <div class="prediction-content">
+            <p>The market is splitting: <strong>tools for accountants</strong> versus <strong>tools that replace them</strong>. Botkeeper straddled both and died. Docyt is straddling the same line. Whichever company picks a side first captures the trust gap that Botkeeper's exit just opened.</p>
+        </div>
+    </div>
+
+    <!-- 8. METHODOLOGY MICRO-LINE -->
+    <div class="methodology">
+        Based on analysis of 22 data points across Reddit, G2, Capterra, CPA Practice Advisor, AccountingWEB, and company website, collected February 2026
+    </div>
+
+    <!-- 9. CTA -->
+    <div class="cta-section">
+        <p>"We found 3 additional patterns in how accountants talk about AI bookkeeping trust — including why Docyt's closest competitor shut down last week despite $90M in funding. Want the full picture?"</p>
+        <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">Book a Conversation with Elena</a>
+    </div>
+
+    <!-- TrendLoom Analytics — Airtable Direct -->
+    <script>
+    (function(){
+      var T=atob('cGF0clVxOXdjSk9hMGNXdzUuNTk0YzRhMWI0OWZhNzZhNGZjNDQ3N2ZhY2ExY2VmNzY4MjNlYjk2OGEzOTY4ZGYzMGEwYjRhNDA3NzQ2MjlkNA==');
+      var B='appaz1L5luqIKZgHL';
+      var U='https://api.airtable.com/v0/'+B+'/PageViews';
+      var p=new URLSearchParams(location.search);
+      var base={
+        report:location.pathname.split('/').pop()||'',
+        cid:p.get('cid')||'',
+        page_url:location.href,
+        user_agent:navigator.userAgent||''
+      };
+      var t0=Date.now(),mxS=0,exited=false;
+      function trk(){
+        var st=window.pageYOffset||document.documentElement.scrollTop;
+        var dh=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)-window.innerHeight;
+        if(dh>0){var pc=Math.round(st/dh*100);if(pc>mxS)mxS=pc;}
+      }
+      function send(ev){
+        var fields={
+          'Report':base.report,'CID':base.cid,'Event':ev,
+          'Scroll %':mxS,'Time on Page':Math.round((Date.now()-t0)/1000),
+          'Page URL':base.page_url,'User Agent':base.user_agent.substring(0,500),
+          'Timestamp':new Date().toISOString()
+        };
+        fetch(U,{method:'POST',headers:{'Authorization':'Bearer '+T,'Content-Type':'application/json'},
+          body:JSON.stringify({fields:fields}),keepalive:true}).catch(function(){});
+      }
+      send('page_view');
+      window.addEventListener('scroll',trk,{passive:true});
+      var btns=document.querySelectorAll('.cta-button');
+      for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){send('cta_click');});}
+      document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden'&&!exited){exited=true;send('page_exit');}});
+    })();
+    </script>
+
+</body>
+</html>
