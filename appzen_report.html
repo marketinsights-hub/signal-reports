@@ -14,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* TrendLoom Signal Report — Template v3 (TrendLoom.io Design System) */
+        /* TrendLoom Signal Report — Template v3.1 (TrendLoom.io Design System) */
+        /* v3.1: Added "The Opening" section between Prediction and Methodology */
 
         :root {
             --primary: #262121;
@@ -62,15 +63,20 @@
         }
 
         .header .logo-text {
-            font-size: 0.8rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            letter-spacing: -0.01em;
             color: var(--primary);
         }
 
-        .header .logo-link:hover .logo-text {
+        .header .logo-text .loom {
             color: var(--accent);
+        }
+
+        .header .logo-text .io {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.85em;
         }
 
         .header .report-label {
@@ -214,6 +220,18 @@
 
         .prediction-content p { margin-bottom: 0.5rem; }
 
+        /* --- THE OPENING --- */
+        .opening-section { margin-bottom: 2.5rem; }
+
+        .opening-content {
+            font-size: 0.95rem;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding-left: 1.25rem;
+        }
+
+        .opening-content p { margin-bottom: 0.5rem; }
+
         /* --- METHODOLOGY --- */
         .methodology {
             font-size: 0.7rem;
@@ -273,7 +291,7 @@
     <div class="header">
         <a href="https://trendloom.io" class="logo-link">
             <img src="data:image/png;base64,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" class="logo-icon" alt="TrendLoom">
-            <span class="logo-text">TrendLoom.io</span>
+            <span class="logo-text">Trend<span class="loom">Loom</span><span class="io">.io</span></span>
         </a>
         <div class="report-label">Signal Report</div>
         <div class="meta">
@@ -336,15 +354,27 @@
         </div>
     </div>
 
-    <!-- 8. METHODOLOGY MICRO-LINE -->
+    <!-- 8. THE OPENING -->
+    <div class="opening-section">
+        <div class="section-label">The Opening</div>
+        <div class="opening-content">
+            {{THE_OPENING}}
+        </div>
+    </div>
+
+    <!-- 9. METHODOLOGY MICRO-LINE -->
     <div class="methodology">
         Based on analysis of 26 data points across G2, Reddit, Gartner, Journal of Accountancy, PYMNTS Intelligence, CFO Dive, and company website audit, collected February 2026
     </div>
 
-    <!-- 9. CTA -->
+    <!-- 10. CTA -->
     <div class="cta-section">
         <p>We identified 3 additional signal patterns in how enterprise finance teams talk about AI audit tools — including one about what "strategic work" actually looks like 18 months post-implementation. Worth 15 minutes?</p>
         <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">Book a Conversation with Elena</a>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid #e8ddd0;">
+        <a href="privacy.html" style="font-size:0.7rem;color:#888888;text-decoration:none;">Privacy Policy</a>
     </div>
 
     <!-- TrendLoom Analytics — Airtable Direct -->
