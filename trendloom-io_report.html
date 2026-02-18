@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Report — TrendLoom</title>
+    <meta property="og:title" content="Signal Report: TrendLoom">
+    <meta property="og:description" content="The Thesis That Built the Competition.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://marketinsights-hub.github.io/signal-reports/trendloom-io_report.html">
+    <meta property="og:image" content="https://marketinsights-hub.github.io/signal-reports/og/trendloom-io_report.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #262121;
+            --accent: #fe6037;
+            --accent-light: #ff7a56;
+            --bg: #fefaf6;
+            --text: #262121;
+            --text-light: #555555;
+            --text-muted: #888888;
+            --light-bg: #faebdc;
+            --border: #e8ddd0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+        }
+
+        .header .logo-icon { height: 20px; width: auto; }
+
+        .header .logo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--primary);
+        }
+
+        .header .logo-text .loom { color: var(--accent); }
+
+        .header .logo-text .io {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.85em;
+        }
+
+        .header .report-label {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+
+        .header .meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .section-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .mirror-section { margin-bottom: 2.5rem; }
+
+        .mirror-content {
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 3px solid var(--border);
+            padding-left: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .mirror-content p { margin-bottom: 0.75rem; }
+
+        .mirror-source {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        .key-finding {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2.5rem 0;
+            box-shadow: 8px 8px 16px 4px rgba(0,0,0,0.05);
+        }
+
+        .key-finding h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+
+        .key-finding p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .gap-section { margin-bottom: 2.5rem; }
+
+        .void-quote {
+            background: var(--light-bg);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .void-quote p {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .void-quote cite {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: normal;
+        }
+
+        .pattern-section { margin-bottom: 2.5rem; }
+
+        .pattern-section h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .pattern-section p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .evidence-line {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .prediction-section { margin-bottom: 2.5rem; }
+
+        .prediction-content {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .prediction-content p { margin-bottom: 0.5rem; }
+
+        .opening-section { margin-bottom: 2.5rem; }
+
+        .opening-content {
+            font-size: 0.95rem;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding-left: 1.25rem;
+        }
+
+        .opening-content p { margin-bottom: 0.5rem; }
+
+        .methodology {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            font-style: italic;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.75rem 2.5rem;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: background 0.2s ease;
+            box-shadow: 8px 8px 16px 4px rgba(0,0,0,0.05);
+        }
+
+        .cta-button:hover { background: var(--accent-light); }
+
+        @media (max-width: 600px) {
+            body { padding: 1.5rem 1rem; }
+            .key-finding { padding: 1.5rem; }
+            .key-finding h2 { font-size: 1.15rem; }
+            .void-quote { padding: 0.75rem 1rem; }
+            .cta-section { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <div class="header">
+        <a href="https://trendloom.io" class="logo-link">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAABBKSURBVHgB7d0/cxzHmcfxp2f5BzoFWoMOLvOItnSoUsBVYEunhKvsMkLZZZjLLoOcXSbxFUjMLiOYXUYxvIhg4pLLAaHAVaxSubR+ATahwKYMcKf99O7KomSK3J7pmene/n6qUFhSSwYi9rfP8/SfFQEAAAAAAAAAAAAAAAAAAAAAAAAAAACAMTKCrNhqPhU5K/WR+5rWImUh9rVazNSsfm+lfOaPlC/5Kxc/fGzFLPTvPNW/8+ti/Xv6VZyKXFqYo+NTQTYImBH6LkTqmf7q2iY8ZutQMVMZlNWAMQt9sNAg+qIQc7L+vZ0Twmd8CJjErcPkm1m9ChBzTYNkLi+vOmKlYeOCRx6sg4fQSR0BkxhbvVvqt7m2NtcTD5NtndjVl3kwETk2R58vBMkgYCK3qVD2XaujLzT9PvpAeRlX4RwXUtwTuXxMhRM3AiZCtnpP252nN/Rde66/nAte5FgD514hEw2b35wIokLAREJbn7kOZa9rqFRCldLUQn+gPxOZ3CFs4kDADGg9T6kPCJVObMLG3GJuMxwCpmduplLLk0r/x98Q2p++HOtS/Z2J7HzGzKZfBExP1i2Q1bmKrYbfi5Ivndcc6bzmFi1UPwiYDn27AqShciBUK7E50arm1oWjz48EnSFgOrAOlr8e6rvlh1Qr0XOzmk/13+kes5rwCJiACJa0rdsnc5OgCYeACWC9GmQPma+MA0ETDgHTAhXLuBE07REwDRAseTFiPxYp7hA0/ggYT7b61UcES5YWuup0k1UnPwTMltw+Fp2x3BZ23OaOoPFAwLyEG+BugmUuwAbzme0Ugh+1bofqh0K44Af0nbnSN56v3M+I4EdRwTwH7RA8LYyY96lm/hkB84z16tCTzRAX8GOk/lTk1ZscqPwOAbNB1YJAtJqZfMBhyjVmMOLC5Z1PNFzuC+GC9nRRYPmQ2cxa1hXMZoXorj6cCRBe9rOZbCsYrVoONytEhAu64t7AHi6rd7Kd6WVXwTDIxRByHQBnFTC0RBhYdi1TNi3SepWIlgiDcm9w92317/uSiSwCRsPlo/UqEQcUMTgNmfpuLqtMo2+RdJh7W+ctlQCRcXMZc/S7X8uIjTZg3DDXyhO3t4WWCDE70bnMB2Ody4wyYDbDXDbOIRWjHf6ObgZjq1/OCBckZjP8dXc7j8uoKph1uBiGuUjVqZHJ+2M6xzSaCsb+17sHhAsSN12dY9KfZRmJUVQwq3Cx9kiAkTDGVOb253ckcckHDOGCsRpDyCQdMIQLxi71kEk2YAgX5CLlkEkyYAgX5CbVkEkuYNZL0cVDAfKS5BJ2UsvU6x26bikayI5bwr5vq/eSOvqSTMB8t/2ffS7IlguZuynt+E2iReJsEfA9CyOvvJ3C7XhJVDCbW+hKAeCUm5sCohd9wLiPFBGuXAB+aLas3rktkYs6YNY30XE5N/A8q8/HjvxmvGhnMO6qS8IF8OI+rvaue+1IZKILGPehaIRL4BMXQv4S3TwmqhZp/XGu8qkAaERfP7+eHP02mtdQNAGznru4D0Zjpy7QQlTzmGhaJI4BAEFMNxtToxBFwLj9LsLcBQhlZqtffiIRGLxF4voFoBsx7I8ZNGA2n77owqUUAKENfihy4BaJJWmgQ+XQS9eDVTCb3bpfCYBODdkqDVbBbHbrAuiYvtYGO3U9SMCwagT0qlxWv/pYBtB7i0RrBAxikA14A1QwNur7K4CRmg7RKvUaMFq9VFakEgBDmOtrcC496jdgqF6AQfVdxfQWMK56EQa7wNB6Hfj2MuTlhjogKjrwfeX1Pnb49lXBHAjhAsRiWstfe7lMv/MKhmVpIEq9VDE9VDAMdoEI9VLFdFrBUL0AUet8813HFQzVCxAxrWJsp1VMZxUM1QuQhE5nMR1WMFQvQAI6ncV0UsFQvQBJ6ayK6aSCqcXsC4BUdFbFdBIwRupDAZAMXU067OKjZ4MHDGeOgCRNl/JN8M4jfMCIpXoBElSIPZDAggaMrd6byepDuAEkKPh9MYErmCXVC5CwWmzQNinYMrWtZlMrlx8LgJQFXbIOWMHssDQNpE+XrJ9UEkiwgLHrO18AJE7bmhsSSJAWiZ27wLgYMa+HOGUdpILp+kQmgH7VUlcSQJCACVlSARieVjBBRh6tA2az96UUAGNShtgT0zpgallWAmB0tE2aS0utA4b2CBinEG1Sq4ChPQJGrdy8xhtrFTDaHs0FwGjV8rTVBtpWAaMlFO0RMGL6Gr8uLTTeaMfZIyAPRl75SdOzSY0rmKVcmguA0WtzEVXjgJnQHgFZMGIbD3obB4wVmQuA0WuzFaVRwLjDjcLyNJCLcvOa99a0gpkLgGwsG77mGwaMbbV0BSAt2iY1es03a5G42BvIig5659KA9z4Y9r8AeWqyH6ZBBbND9QJk6Rvv1753wNQt1sQBpKvJa987YIqGwx4AqTPXxJN3wFj2vwBZajLo9RryMuAF8uY76PWsYBjwAnk7K32e7RUwS6mnAiBbmgFeRYZXwBgpqGCAjPmerPYKmEKs9xQZwJiY13ye7RUwrCABeTNdtkgaMaUAyJgpfZ69dcC4JWr9yxnyAnmb2mq+dQ54VDD/UgoAeCxVewQMS9QAnKflts/0mcGUAiB7SynCt0g1AQNAVueLym2f61HBWFokAOKTBR4BwwoSAGf7zXZbB4yWRT8TANkzHvvhWn34PQC8iEcFwy5eACvltk+kggHQGQIGQGe2P4vEPhgAa+W2T6SCAdAZAgZAZwgYAJ3x/mxqpK0sy+mrFy+W53Vd6rvLtLa21Pnaa/qDMDX2H1sRvv3+0tmb/rnFM79cPbbGLPTPnep/+7rQx6JfE2NO/3J+vlBen22MtBEwI/RtiCzrera09poLD7Gry5pLcY+H5QJmYdYh9IWGz4mG0Ok3T5+eED7jQ8AkzoXJzoULM6thoi/Ya1qFzBNe8TtxwaPfH5iiOCF00kfAJGZvb6+U8/O5tjbXEw+TbZ24KkfbrgeT5fL4kSaOIBkETORWFcpksu9ancLaffYjiZvpHOvXvTMNHCqcuBEwEXrrjTdm58vljU2FMhf8KP0BXoXNhcnk+PdffnkiiAoBE4m9X/xiXte1a3sqqpTGFtpKfXZpMrlD2MSBgBmQm6fUZ2cHhEonVmEzqetbzG2GQ8D0zM1ULhdFpcvGN2h/+uHaqLoo7mjb+Rkzm34RMD1xLdCyrt1cpZLh96Lky5iji5PJLVqofhAwHVqtAInsa6l+QLUSnRNbFLe+/MMfjgSdIWA64ILlUlEcahv0oVCtxM7tKv7U1PU9ZjXhETABESyJ0/apqOubBE04BEwAe5osSw0W5isjQdAEQ8C0QMUycgRNawRMAwRLZoz5WIPmDkHjbyLw8ubVqx/p/7T/04f/oV87ghzMdSVwf/fKla///Pgxy9seqGC25Pax2OXyNjtus7fQ5e2bLG9vh4B5CTfA1Xev2+xjwfcwn9kKLdILuHZIg+VIH+4J8H0zfeP58Mrurvzp8eMHguowledmfuBE07REwDRAseTFiPxYp7hA0/ggYT7b61UcES5YWuup0k1UnPwTMltw+Fp2x3BZ23OaOoPFAwLyEG+BugmUuwAbzme0Ugh+1bofqh0K44Af0nbnSN56v3M+I4EdRwTwH7RA8LYyY96lm/hkB84z16tCTzRAX8GOk/lTk1ZscqPwOAbNB1YJAtJqZfMBhyjVmMOLC5Z1PNFzuC+GC9nRRYPmQ2cxa1hXMZoXorj6cCRBe9rOZbCsYrVoONytEhAu64t7AHi6rd7Kd6WVXwTDIxRByHQBnFTC0RBhYdi1TNi3SepWIlgiDcm9w92317/uSiSwCRsPlo/UqEQcUMTgNmfpuLqtMo2+RdJh7W+ctlQCRcXMZc/S7X8uIjTZg3DDXyhO3t4WWCDE70bnMB2Ody4wyYDbDXDbOIRWjHf6ObgZjq1/OCBckZjP8dXc7j8uoKph1uBiGuUjVqZHJ+2M6xzSaCsb+17sHhAsSN12dY9KfZRmJUVQwq3Cx9kiAkTDGVOb253ckcckHDOGCsRpDyCQdMIQLxi71kEk2YAgX5CLlkEkyYAgX5CbVkEkuYNZL0cVDAfKS5BJ2UsvU6x26bikayI5bwr5vq/eSOvqSTMB8t/2ffS7IlguZuynt+E2iReJsEfA9CyOvvJ3C7XhJVDCbW+hKAeCUm5sCohd9wLiPFBGuXAB+aLas3rktkYs6YNY30XE5N/A8q8/HjvxmvGhnMO6qS8IF8OI+rvaue+1IZKILGPehaIRL4BMXQv4S3TwmqhZp/XGu8qkAaERfP7+eHP02mtdQNAGznru4D0Zjpy7QQlTzmGhaJI4BAEFMNxtToxBFwLj9LsLcBQhlZqtffiIRGLxF4voFoBsx7I8ZNGA2n77owqUUAKENfihy4BaJJWmgQ+XQS9eDVTCb3bpfCYBODdkqDVbBbHbrAuiYvtYGO3U9SMCwagT0qlxWv/pYBtB7i0RrBAxikA14A1QwNur7K4CRmg7RKvUaMFq9VFakEgBDmOtrcC496jdgqF6AQfVdxfQWMK56EQa7wNB6Hfj2MuTlhjogKjrwfeX1Pnb49lXBHAjhAsRiWstfe7lMv/MKhmVpIEq9VDE9VDAMdoEI9VLFdFrBUL0AUet8813HFQzVCxAxrWJsp1VMZxUM1QuQhE5nMR1WMFQvQAI6ncV0UsFQvQBJ6ayK6aSCqcXsC4BUdFbFdBIwRupDAZAMXU067OKjZ4MHDGeOgCRNl/JN8M4jfMCIpXoBElSIPZDAggaMrd6byepDuAEkKPh9MYErmCXVC5CwWmzQNinYMrWtZlMrlx8LgJQFXbIOWMHssDQNpE+XrJ9UEkiwgLHrO18AJE7bmhsSSJAWiZ27wLgYMa+HOGUdpILp+kQmgH7VUlcSQJCACVlSARieVjBBRh6tA2az96UUAGNShtgT0zpgallWAmB0tE2aS0utA4b2CBinEG1Sq4ChPQJGrdy8xhtrFTDaHs0FwGjV8rTVBtpWAaMlFO0RMGL6Gr8uLTTeaMfZIyAPRl75SdOzSY0rmKVcmguA0WtzEVXjgJnQHgFZMGIbD3obB4wVmQuA0WuzFaVRwLjDjcLyNJCLcvOa99a0gpkLgGwsG77mGwaMbbV0BSAt2iY1es03a5G42BvIig5659KA9z4Y9r8AeWqyH6ZBBbND9QJk6Rvv1753wNQt1sQBpKvJa987YIqGwx4AqTPXxJN3wFj2vwBZajLo9RryMuAF8uY76PWsYBjwAnk7K32e7RUwS6mnAiBbmgFeRYZXwBgpqGCAjPmerPYKmEKs9xQZwJiY13ye7RUwrCABeTNdtkgaMaUAyJgpfZ69dcC4JWr9yxnyAnmb2mq+dQ54VDD/UgoAeCxVewQMS9QAnKflts/0mcGUAiB7SynCt0g1AQNAVueLym2f61HBWFokAOKTBR4BwwoSAGf7zXZbB4yWRT8TANkzHvvhWn34PQC8iEcFwy5eACvltk+kggHQGQIGQGe2P4vEPhgAa+W2T6SCAdAZAgZAZwgYAJ3x/mxqpK0sy+mrFy+W53Vd6rvLtLa21Pnaa/qDMDX2H1sRvv3+0tmb/rnFM79cPbbGLPTPnep/+7rQx6JfE2NO/3J+vlBen22MtBEwI/RtiCzrera09poLD7Gry5pLcY+H5QJmYdYh9IWGz4mG0Ok3T5+eED7jQ8AkzoXJzoULM6thoi/Ya1qFzBNe8TtxwaPfH5iiOCF00kfAJGZvb6+U8/O5tjbXEw+TbZ24KkfbrgeT5fL4kSaOIBkETORWFcpksu9ancLaffYjiZvpHOvXvTMNHCqcuBEwEXrrjTdm58vljU2FMhf8KP0BXoXNhcnk+PdffnkiiAoBE4m9X/xiXte1a3sqqpTGFtpKfXZpMrlD2MSBgBmQm6fUZ2cHhEonVmEzqetbzG2GQ8D0zM1ULhdFpcvGN2h/+uHaqLoo7mjb+Rkzm34RMD1xLdCyrt1cpZLh96Lky5iji5PJLVqofhAwHVqtAInsa6l+QLUSnRNbFLe+/MMfjgSdIWA64ILlUlEcahv0oVCtxM7tKv7U1PU9ZjXhETABESyJ0/apqOubBE04BEwAe5osSw0W5isjQdAEQ8C0QMUycgRNawRMAwRLZoz5WIPmDkHjbyLw8ubVqx/p/7T/04f/oV87ghzMdSVwf/fKla///Pgxy9seqGC25Pax2OXyNjtus7fQ5e2bLG9vh4B5CTfA1Xev2+xjwfcwn9kKLdILuHZIg+VIH+4J8H0zfeP58Mrurvzp8eMHguowledmfuBE07REwDRAseTFiPxYp7hA0/ggYT7b61UcES5YWuup0k1UnPwTMltw+Fp2x3BZ23OaOoPFAwLyEG+BugmUuwAbzme0Ugh+1bofqh0K44Af0nbnSN56v3M+I4EdRwTwH7RA8LYyY96lm/hkB84z16tCTzRAX8GOk/lTk1ZscqPwOAbNB1YJAtJqZfMBhyjVmMOLC5Z1PNFzuC+GC9nRRYPmQ2cxa1hXMZoXorj6cCRBe9rOZbCsYrVoONytEhAu64t7AHi6rd7Kd6WVXwTDIxRByHQBnFTC0RBhYdi1TNi3SepWIlgiDcm9w92317/uSiSwCRsPlo/UqEQcUMTgNmfpuLqtMo2+RdJh7W+ctlQCRcXMZc/S7X8uIjTZg3DDXyhO3t4WWCDE70bnMB2Ody4wyYDbDXDbOIRWjHf6ObgZjq1/OCBckZjP8dXc7j8uoKph1uBiGuUjVqZHJ+2M6xzSaCsb+17sHhAsSN12dY9KfZRmJUVQwq3Cx9kiAkTDGVOb253ckcckHDOGCsRpDyCQdMIQLxi71kEk2YAgX5CLlkEkyYAgX5CbVkEkuYNZL0cVDAfKS5BJ2UsvU6x26bikayI5bwr5vq/eSOvqSTMB8t/2ffS7IlguZuynt+E2iReJsEfA9CyOvvJ3C7XhJVDCbW+hKAeCUm5sCohd9wLiPFBGuXAB+aLas3rktkYs6YNY30XE5N/A8q8/HjvxmvGhnMO6qS8IF8OI+rvaue+1IZKILGPehaIRL4BMXQv4S3TwmqhZp/XGu8qkAaERfP7+eHP02mtdQNAGznru4D0Zjpy7QQlTzmGhaJI4BAEFMNxtToxBFwLj9LsLcBQhlZqtffiIRGLxF4voFoBsx7I8ZNGA2n77owqUUAKENfihy4BaJJWmgQ+XQS9eDVTCb3bpfCYBODdkqDVbBbHbrAuiYvtYGO3U9SMCwagT0qlxWv/pYBtB7i0RrBAxikA14A1QwNur7K4CRmg7RKvUaMFq9VFakEgBDmOtrcC496jdgqF6AQfVdxfQWMK56EQa7wNB6Hfj2MuTlhjogKjrwfeX1Pnb49lXBHAjhAsRiWstfe7lMv/MKhmVpIEq9VDE9VDAMdoEI9VLFdFrBUL0AUet8813HFQzVCxAxrWJsp1VMZxUM1QuQhE5nMR1WMFQvQAI6ncV0UsFQvQBJ6ayK6aSCqcXsC4BUdFbFdBIwRupDAZAMXU067OKjZ4MHDGeOgCRNl/JN8M4jfMCIpXoBElSIPZDAggaMrd6byepDuAEkKPh9MYErmCXVC5CwWmzQNinYMrWtZlMrlx8LgJQFXbIOWMHssDQNpE+XrJ9UEkiwgLHrO18AJE7bmhsSSJAWiZ27wLgYMa+HOGUdpILp+kQmgH7VUlcSQJCACVlSARieVjBBRh6tA2az96UUAGNShtgT0zpgallWAmB0tE2aS0utA4b2CBinEG1Sq4ChPQJGrdy8xhtrFTDaHs0FwGjV8rTVBtpWAaMlFO0RMGL6Gr8uLTTeaMfZIyAPRl75SdOzSY0rmKVcmguA0WtzEVXjgJnQHgFZMGIbD3obB4wVmQuA0WuzFaVRwLjDjcLyNJCLcvOa99a0gpkLgGwsG77mGwaMbbV0BSAt2iY1es03a5G42BvIig5659KA9z4Y9r8AeWqyH6ZBBbND9QJk6Rvv1753wNQt1sQBpKvJa987YIqGwx4AqTPXxJN3wFj2vwBZajLo9RryMuAF8uY76PWsYBjwAnk7K32e7RUwS6mnAiBbmgFeRYZXwBgpqGCAjPmerPYKmEKs9xQZwJiY13ye7RUwrCABeTNdtkgaMaUAyJgpfZ69dcC4JWr9yxnyAnmb2mq+dQ54VDD/UgoAeCxVewQMS9QAnKflts/0mcGUAiB7SynCt0g1AQNAVueLym2f61HBWFokAOKTBR4BwwoSAGf7zXZbB4yWRT8TANkzHvvhWn34PQC8iEcFwy5eACvltk+kggHQGQIGQGe2P4vEPhgAa+W2T6SCAdAZAgZAZwgYAJ3x/mxqpK0sy+mrFy+W53Vd6rvLtLa21Pnaa/qDMDX2H1sRvv3+0tmb/rnFM79cPbbGLPTPnep/+7rQx6JfE2NO/3J+vlBen22MtBEwI/RtiCzrera09poLD7Gry5pLcY+H5QJmYdYh9IWGz4mG0Ok3T5+eED7jQ8AkzoXJzoULM6thoi/Ya1qFzBNe8TtxwaPfH5iiOCF00kfAJGZvb6+U8/O5tjbXEw+TbZ24KkfbrgeT5fL4kSaOIBkETORWFcpksu9ancLaffYjiZvpHOvXvTMNHCqcuBEwEXrrjTdm58vljU2FMhf8KP0BXoXNhcnk+PdffnkiiAoBE4m9X/xiXte1a3sqqpTGFtpKfXZpMrlD2MSBgBmQm6fUZ2cHhEonVmEzqetbzG2GQ8D0zM1ULhdFpcvGN2h/+uHaqLoo7mjb+Rkzm34RMD1xLdCyrt1cpZLh96Lky5iji5PJLVqofhAwHVqtAInsa6l+QLUSnRNbFLe+/MMfjgSdIWA64ILlUlEcahv0oVCtxM7tKv7U1PU9ZjXhETABESyJ0/apqOubBE04BEwAe5osSw0W5isjQdAEQ8C0QMUycgRNawRMAwRLZoz5WIPmDkHjbyLw8ubVqx/p/7T/04f/oV87ghzMdSVwf/fKla///Pgxy9seqGC25Pax2OXyNjtus7fQ5e2bLG9vh4B5CTfA1Xev2+xjwfcwn9kKLdILuHZIg+VIH+4J8H0zfeP58Mrurvzp8eMHguowledmfuBE07REwDRAseTFiPxYp7hA0/ggYT7b61UcES5YWuup0k1UnPwTMltw+Fp2x3BZ23OaOoPFAwLyEG+BugmUuwAbzme0Ugh+1bofqh0K44Af0nbnSN56v3M+I4EdRwTwH7RA8LYyY96lm/hkB84z16tCTzRAX8GOk/lTk1ZscqPwOAbNB1YJAtJqZfMBhyjVmMOLC5Z1PNFzuC+GC9nRRYPmQ2cxa1hXMZoXorj6cCRBe9rOZbCsYrVoONytEhAu64t7AHi6rd7Kd6WVXwTDIxRByHQBnFTC0RBhYdi1TNi3SepWIlgiDcm9w92317/uSiSwCRsPlo/UqEQcUMTgNmfpuLqtMo2+RdJh7W+ctlQCRcXMZc/S7X8uIjTZg3DDXyhO3t4WWCDE70bnMB2Ody4wyYDbDXDbOIRWjHf6ObgZjq1/OCBckZjP8dXc7j8uoKph1uBiGuUjVqZHJ+2M6xzSaCsb+17sHhAsSN12dY9KfZRmJUVQwq3Cx9kiAkTDGVOb253ckcckHDOGCsRpDyCQdMIQLxi71kEk2YAgX5CLlkEkyYAgX5CbVkEkuYNZL0cVDAfKS5BJ2UsvU6x26bikayI5bwr5vq/eSOvqSTMB8t/2ffS7IlguZuynt+E2iReJsEfA9CyOvvJ3C7XhJVDCbW+hKAeCUm5sCohd9wLiPFBGuXAB+aLas3rktkYs6YNY30XE5N/A8q8/HjvxmvGhnMO6qS8IF8OI+rvaue+1IZKILGPehaIRL4BMXQv4S3TwmqhZp/XGu8qkAaERfP7+eHP02mtdQNAGznru4D0Zjpy7QQlTzmGhaJI4BAEFMNxtToxBFwLj9LsLcBQhlZqtffiIRGLxF4voFoBsx7I8ZNGA2n77owqUUAKENfihy4BaJJWmgQ+XQS9eDVTCb3bpfCYBODdkqDVbBbHbrAuiYvtYGO3U9SMCwagT0qlxWv/pYBtB7i0RrBAxikA14A1QwNur7K4CRmg7RKvUaMFq9VFakEgBDmOtrcC496jdgqF6AQfVdxfQWMK56EQa7wNB6Hfj2MuTlhjogKjrwfeX1Pnb49lXBHAjhAsRiWstfe7lMv/MKhmVpIEq9VDE9VDAMdoEI9VLFdFrBUL0AUet8813HFQzVCxAxrWJsp1VMZxUM1QuQhE5nMR1WMFQvQAI6ncV0UsFQvQBJ6ayK6aSCqcXsC4BUdFbFdBIwRupDAZAMXU067OKjZ4MHDGeOgCRNl/JN8M4jfMCIpXoBElSIPZDAggaMrd6byepDuAEkKPh9MYErmCXVC5CwWmzQNinYMrWtZlMrlx8LgJQFXbIOWMHssDQNpE+XrJ9UEkiwgLHrO18AJE7bmhsSSJAWiZ27wLgYMa+HOGUdpILp+kQmgH7VUlcSQJCACVlSARieVjBBRh6tA2az96UUAGNShtgT0zpgallWAmB0tE2aS0utA4b2CBinEG1Sq4ChPQJGrdy8xhtrFTDaHs0FwGjV8rTVBtpWAaMlFO0RMGL6Gr8uLTTeaMfZIyAPRl75SdOzSY0rmKVcmguA0WtzEVXjgJnQHgFZMGIbD3obB4wVmQuA0WuzFaVRwLjDjcLyNJCLcvOa99a0gpkLgGwsG77mGwaMbbV0BSAt2iY1es03a5G42BvIig5659KA9z4Y9r8AeWqyH6ZBBbND9QJk6Rvv1753wNQt1sQBpKvJa987YIqGwx4AqTPXxJN3wFj2vwBZajLo9RryMuAF8uY76PWsYBjwAnk7K32e7RUwS6mnAiBbmgFeRYZXwBgpqGCAjPmerPYKmEKs9xQZwJiY13ye7RUwrCABeTNdtkgaMaUAyJgpfZ69dcC4JWr9yxnyAnmb2mq+dQ54VDD/UgoAeCxVewQMS9QAnKflts/0mcGUAiB7SynCt0g1AQNAVueLym2f61HBWFokAOKTBR4BwwoSAGf7zXZbB4yWRT8TANkzHvvhWn34PQC8iEcFwy5eACvltk+kggHQGQIGQGe2P4vEPhgAa+W2T6SCAdAZAgZAZwgYAJ3x/mxqpK0sy+mrFy+W53Vd6rvLtLa21Pnaa/qDMDX2H1sRvv3+0tmb/rnFM79cPbbGLPTPnep/+7rQx6JfE2NO/3J+vlBen22MtBEwI/RtiCzrera09poLD7Gry5pLcY+H5QJmYdYh9IWGz4mG0Ok3T5+eED7jQ8AkzoXJzoULM6thoi/Ya1qFzBNe8TtxwaPfH5iiOCF00kfAJGZvb6+U8/O5tjbXEw+TbZ24KkfbrgeT5fL4kSaOIBkETORWFcpksu9ancLaffYjiZvpHOvXvTMNHCqcuBEwEXrrjTdm58vljU2FMhf8KP0BXoXNhcnk+PdffnkiiAoBE4m9X/xiXte1a3sqqpTGFtpKfXZpMrlD2MSBgBmQm6fUZ2cHhEonVmEzqetbzG2GQ8D0zM1ULhdFpcvGN2h/+uHaqLoo7mjb+Rkzm34RMD1xLdCyrt1cpZLh96Lky5iji5PJLVqofhAwHVqtAInsa6l+QLUSnRNbFLe+/MMfjgSdIWA64ILlUlEcahv0oVCtxM7tKv7U1PU9ZjXhETABESyJ0/apqOubBE04BEwAe5osSw0W5isjQdAEQ8C0QMUycgRNawRMAwRLZoz5WIPmDkHjbyLw8ubVqx/p/7T/04f/oV87ghzMdSVwf/fKla///Pgxy9seqGC25Pax2OXyNjtus7fQ5e2bLG9vh4B5CTfA1Xev2+xjwfcwn9kKLdILuHZIg+VIH+4J8H0zfeP58Mrurvzp8eMHguowledmfuBE07REwDRAseTFiPxYp7hA0/ggYT7b61UcES5YWuup0k1UnPwTMltw+Fp2x3BZ23OaOoPFAwLyEG+BugmUuwAbzme0Ugh+1bofqh0K44Af0nbnSN56v3M+I4EdRwTwH7RA8LYyY96lm/hkB84z16tCTzRAX8GOk/lTk1ZscqPwOAbNB1YJAtJqZfMBhyjVmMOLC5Z1PNFzuC+GC9nRRYPmQ2cxa1hXMZoXorj6cCRBe9rOZbCsYrVoONytEhAu64t7AHi6rd7Kd6WVXwTDIxRByHQBnFTC0RBhYdi1TNi3SepWIlgiDcm9w92317/uSiSwCRsPlo/UqEQcUMTgNmfpuLqtMo2+RdJh7W+ctlQCRcXMZc/S7X8uIjTZg3DDXyhO3t4WWCDE70bnMB2Ody4wyYDbDXDbOIRWjHf6ObgZjq1/OCBckZjP8dXc7j8uoKph1uBiGuUjVqZHJ+2M6xzSaCsb+17sHhAsSN12dY9KfZRmJUVQwq3Cx9kiAkTDGVOb253ckcckHDOGCsRpDyCQdMIQLxi71kEk2YAgX5CLlkEkyYAgX5CbVkEkuYNZL0cVDAfKS5BJ2UsvU6x26bikayI5bwr5vq/eSOvqSTMB8t/2ffS7IlguZuynt+E2iReJsEfA9CyOvvJ3C7XhJVDCbW+hKAeCUm5sCohd9wLiPFBGuXAB+aLas3rktkYs6YNY30XE5N/A8q8/HjvxmvGhnMO6qS8IF8OI+rvaue+1IZKILGPehaIRL4BMXQv4S3TwmqhZp/XGu8qkAaERfP7+eHP02mtdQNAGznru4D0Zjpy7QQlTzmGhaJI4BAEFMNxtToxBFwLj9LsLcBQhlZqtffiIRGLxF4voFoBsx7I8ZNGA2n77owqUUAKENfihy4BaJJWmgQ+XQS9eDVTCb3bpfCYBODdkqDVbBbHbrAuiYvtYGO3U9SMCwagT0qlxWv/pYBtB7i0RrBAxikA14A1QwNur7K4CRmg7RKvUaMFq9VFakEgBDmOtrcC496jdgqF6AQfVdxfQWMK56EQa7wNB6Hfj2MuTlhjogKjrwfeX1Pnb49lXBHAjhAsRiWstfe7lMv/MKhmVpIEq9VDE9VDAMdoEI9VLFdFrBUL0AUet8813HFQzVCxAxrWJsp1VMZxUM1QuQhE5nMR1WMFQvQAI6ncV0UsFQvQBJ6ayK6aSCqcXsC4BUdFbFdBIwRupDAZAMXU067OKjZ4MHDGeOgCRNl/JN8M4jfMCIpXoBElSIPZDAggaMrd6byepDuAEkKPh9MYErmCXVC5CwWmzQNinYMrWtZlMrlx8LgJQFXbIOWMHssDQNpE+XrJ9UEkiwgLHrO18AJE7bmhsSSJAWiZ27wLgYMa+HOGUdpILp+kQmgH7VUlcSQJCACVlSARieVjBBRh6tA2az96UUAGNShtgT0zpgallWAmB0tE2aS0utA4b2CBinEG1Sq4ChPQJGrdy8xhtrFTDaHs0FwGjV8rTVBtpWAaMlFO0RMGL6Gr8uLTTeaMfZIyAPRl75SdOzSY0rmKVcmguA0WtzEVXjgJnQHgFZMGIbD3obB4wVmQuA0WuzFaVRwLjDjcLyNJCLcvOa99a0gpkLgGwsG77mGwaMbbV0BSAt2iY1es03a5G42BvIig5659KA9z4Y9r8AeWqyH6ZBBbND9QJk6Rvv1753wNQt1sQBpKvJa987YIqGwx4AqTPXxJN3wFj2vwBZajLo9RryMuAF8uY76PWsYBjwAnk7K32e7RUwS6mnAiBbmgFeRYZXwBgpqGCAjPmerPYKmEKs9xQZwJiY13ye7RUwrCABeTNdtkgaMaUAyJgpfZ69dcC4JWr9yxnyAnmb2mq+dQ54VDD/UgoAeCxVewQMS9QAnKflts/0mcGUAiB7SynCt0g1AQNAVueLym2f61HBWFokAOKTBR4BwwoSAGf7zXZbB4yWRT8TANkzHvvhWn34PQC8iEcFwy5eACvltk+kggHQGQIGQGe2P4vEPhgAa+W2T6SCAdAZAgZAZwgYAJ3x/mxqpK0sy+mrFy+W53Vd6rvLtLa21Pnaa/qDMDX2H1sRvv3+0tmb/rnFM79cPbbGLPTPnep/+7rQx6JfE2NO/3J+vlBen22MtBEwI/RtiCzrera09poLD7Gry5pLcY+H5QJmYdYh9IWGz4mG0Ok3T5+eED7jQ8AkzoXJzoULM6thoi/Ya1qFzBNe8TtxwaPfH5iiOCF00kfAJGZvb6+U8/O5tjbXEw+TbZ24KkfbrgeT5fL4kSaOIBkETORWFcpksu9ancLaffYjiZvpHOvXvTMNHCqcuBEwEXrrjTdm58vljU2FMhf8KP0BXoXNhcnk+PdffnkiiAoBE4m9X/xiXte1a3sqqpTGFtpKfXZpMrlD2MSBgBmQm6fUZ2cHhEonVmEzqetbzG2GQ8D0zM1ULhdFpcvGN2h/+uHaqLoo7mjb+Rkzm34RMD1xLdCyrt1cpZLh96Lky5iji5PJLVqofhAwHVqtAInsa6l+QLUSnRNbFLe+/MMfjgSdIWA64ILlUlEcahv0oVCtxM7tKv7U1PU9ZjXhETABESyJ0/apqOubBE04BEwAe5osSw0W5isjQdAEQ8C0QMUycgRNawRMAwRLZoz5WIPmDkHjbyLw8ubVqx/p/7T/04f/oV87ghzMdSVwf/fKla///Pgxy9seqGC25Pax2OXyNjtus7fQ5e2bLG9vh4B5CTfA1Xev2+xjwfcwn9kKLdILuHZIg+VIH+4J8H0zfeP58Mrurvzp8eMHgu" class="logo-icon" alt="TrendLoom">
+            <span class="logo-text">Trend<span class="loom">Loom</span><span class="io">.io</span></span>
+        </a>
+        <div class="report-label">Signal Report</div>
+        <div class="meta">
+            <span>TrendLoom &mdash; February 2026</span>
+        </div>
+    </div>
+
+    <!-- 2. THE MIRROR -->
+    <div class="mirror-section">
+        <div class="section-label">What You Say You Do</div>
+        <div class="mirror-content">
+            <p>&ldquo;Human-led market intelligence for teams making high-stakes decisions. TrendLoom helps leaders see change early before results force reaction.&rdquo;</p>
+            <p>&ldquo;AI should not make decisions. It should help people see earlier, so they can decide better.&rdquo;</p>
+            <span class="mirror-source">&mdash; trendloom.io</span>
+        </div>
+    </div>
+
+    <!-- 3. KEY FINDING BOX -->
+    <div class="key-finding">
+        <h2>The Seer&rsquo;s Dilemma</h2>
+        <p>Your founder validated AI-simulated research in her thesis &mdash; the exact technology now racing to replace human market intelligence &mdash; then built a company that positions against it. The industry needs someone who understands both sides. That person exists. The website doesn&rsquo;t show her.</p>
+    </div>
+
+    <!-- 4. THE GAP — VOID LANGUAGE SPECIMENS -->
+    <div class="gap-section">
+        <div class="section-label">What Your Market Is Actually Saying</div>
+
+        <div class="void-quote">
+            <p>&ldquo;60% of organizations have already reduced headcount in anticipation of AI&rsquo;s future impact&hellip; just 2% said they&rsquo;ve made large layoffs tied to actual AI implementation.&rdquo;</p>
+            <cite>&mdash; Senior executives surveyed, Harvard Business Review, January 2026</cite>
+        </div>
+
+        <div class="void-quote">
+            <p>&ldquo;With just a few lines of well-crafted instructions, you can get insights and recommendations that feel like they came from a $20,000 consultant, but in minutes, not months.&rdquo;</p>
+            <cite>&mdash; Startup founder community, 2025</cite>
+        </div>
+
+        <div class="void-quote">
+            <p>&ldquo;Every idea is often seen as a good one [when tested with synthetic users], creating dangerous false confidence in untested solutions.&rdquo;</p>
+            <cite>&mdash; Nielsen Norman Group, UX research authority, 2025</cite>
+        </div>
+    </div>
+
+    <!-- 5. THE PATTERN -->
+    <div class="pattern-section">
+        <div class="section-label">The Pattern</div>
+        <h3>The Seer&rsquo;s Dilemma</h3>
+        <p>In 12 months, market intelligence moved from &ldquo;AI helps researchers&rdquo; to &ldquo;AI replaces researchers.&rdquo; 60% of companies have already cut research teams. But synthetic research produces dangerously over-positive results &mdash; AI focus groups praise every idea, digital twins replicate only 50% of real effects.</p>
+        <p>Your founder&rsquo;s thesis showed where AI surfaces patterns &mdash; and where human judgment is irreplaceable. But the website buries that expertise behind &ldquo;not a bot&rdquo; messaging, sixteen audience types, and no visible deliverable. The proof point is invisible to the people who need it most.</p>
+        <p class="evidence-line">Triangulated across industry data (Qualtrics, HBR, a16z), market dynamics (AlphaSense, Foundation Capital), and company positioning.</p>
+    </div>
+
+    <!-- 6. PERCEPTION MAP (removed — not applicable for unique category) -->
+
+    <!-- 7. PREDICTION / SHADOW SIGNAL -->
+    <div class="prediction-section">
+        <div class="section-label">What This Signals</div>
+        <div class="prediction-content">
+            <p>The first product failure publicly traced to AI-only research will trigger a trust correction. The winners won&rsquo;t be firms that said &ldquo;we&rsquo;re human-led&rdquo; &mdash; they&rsquo;ll be the ones who said: &ldquo;we studied where AI research fails, and here&rsquo;s the evidence.&rdquo;</p>
+            <p>TrendLoom estimate: 9&ndash;15 months before consensus &mdash; based on the narrative shift from &ldquo;AI augments&rdquo; to &ldquo;60% cutting headcount&rdquo; in 12 months, and the 88% accuracy ceiling that separates demos from production.</p>
+        </div>
+    </div>
+
+    <!-- 8. THE OPENING -->
+    <div class="opening-section">
+        <div class="section-label">The Opening</div>
+        <div class="opening-content">
+            <p>Reposition from &ldquo;human-led&rdquo; (which every firm now claims) to &ldquo;thesis-tested&rdquo; &mdash; naming where AI research produces false confidence and how your approach catches what synthetic personas miss. The thesis becomes the moat, not the contradiction.</p>
+        </div>
+    </div>
+
+    <!-- 9. METHODOLOGY MICRO-LINE -->
+    <div class="methodology">
+        Based on analysis of industry publications, academic research, community discussions, market intelligence data, and company positioning, collected February 2026.
+    </div>
+
+    <!-- 10. CTA -->
+    <div class="cta-section">
+        <p>We identified 3 additional patterns in TrendLoom&rsquo;s market &mdash; including how buyers&rsquo; research teams are being restructured in ways that create a narrow positioning window.</p>
+        <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">Book a Conversation with Elena</a>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid #e8ddd0;">
+        <a href="privacy.html" style="font-size:0.7rem;color:#888888;text-decoration:none;">Privacy Policy</a>
+    </div>
+
+</body>
+</html>
