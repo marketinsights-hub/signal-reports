@@ -83,8 +83,7 @@
             color: var(--text);
         }
 
-        /* --- LANGUAGE VISIBILITY --- */
-        [data-lang="ru"] { display: none; }
+        /* --- LANGUAGE VISIBILITY (controlled by JS on load) --- */
 
         .header {
             text-align: center;
@@ -510,6 +509,7 @@
         });
         document.documentElement.lang = lang;
     }
+    switchLang('en');
     </script>
 
 </body>
