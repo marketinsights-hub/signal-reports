@@ -42,47 +42,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- LANGUAGE SWITCHER --- */
-        .lang-switcher {
-            display: flex;
-            justify-content: flex-end;
-            gap: 0;
-            margin-bottom: 1rem;
-        }
-
-        .lang-btn {
-            padding: 0.3rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: inherit;
-        }
-
-        .lang-btn:first-child {
-            border-radius: 4px 0 0 4px;
-        }
-
-        .lang-btn:last-child {
-            border-radius: 0 4px 4px 0;
-            border-left: none;
-        }
-
-        .lang-btn.active {
-            background: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-        }
-
-        .lang-btn:not(.active):hover {
-            background: var(--light-bg);
-            color: var(--text);
-        }
-
         .header {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -345,13 +304,7 @@
 </head>
 <body>
 
-    <!-- LANGUAGE SWITCHER -->
-    <div class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-        <button class="lang-btn" onclick="switchLang('ru')">RU</button>
-    </div>
-
-    <!-- HEADER (shared) -->
+    <!-- HEADER -->
     <div class="header">
         <a href="https://trendloom.io" class="logo-link">
             <img src="data:image/png;base64,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" class="logo-icon" alt="TrendLoom">
@@ -359,14 +312,12 @@
         </a>
         <div class="report-label">Signal Analysis</div>
         <div class="meta">
-            <span>Superhuman  - <span data-lang="en">March 2026</span><span data-lang="ru">Март 2026</span></span>
+            <span>Superhuman &mdash; March 2026</span>
         </div>
     </div>
 
-    <!-- ==================== ENGLISH ==================== -->
-
-    <!-- THE MIRROR — EN -->
-    <div class="mirror-section" data-lang="en">
+    <!-- THE MIRROR -->
+    <div class="mirror-section">
         <div class="section-label">What Superhuman Taught The World</div>
         <div class="mirror-content">
             <p>&ldquo;How would you feel if you could no longer use Superhuman?&rdquo; &mdash; In 2017, Rahul Vohra took a simple question from Sean Ellis and turned it into the most widely adopted product-market fit framework in startup history. The methodology spread virally through Y Combinator, became required reading for early-stage founders, and spawned dozens of SaaS tools for running &ldquo;the PMF survey.&rdquo;</p>
@@ -374,13 +325,13 @@
     </div>
 
     <!-- KEY FINDING — EN -->
-    <div class="key-finding" data-lang="en">
+    <div class="key-finding">
         <h2>The Signal They Invented (And Stopped Reading)</h2>
         <p>Superhuman built one of the most powerful tools for reading behavioral signals in startup history. Then the industry reduced it to a metric. And the company itself stopped applying its own methodology &mdash; rebranding a 40M-user product based on narrative instead of signal, measuring email velocity instead of dependency, and assembling four acquisitions into a suite without asking the question that made them famous.</p>
     </div>
 
     <!-- THE METHOD — EN -->
-    <div class="pattern-section" data-lang="en">
+    <div class="pattern-section">
         <div class="section-label">The Method: Loss Signal, Not Satisfaction Survey</div>
         <p>Sean Ellis created the test around 2009 after analyzing 100+ startups. The question &mdash; &ldquo;How would you feel if you could no longer use this product?&rdquo; &mdash; is not a satisfaction survey. It&rsquo;s a <strong>loss signal</strong>.</p>
         <p>The difference is critical. A satisfaction survey asks &ldquo;do you like this?&rdquo; &mdash; it measures attitude (stated preference). The Ellis question asks &ldquo;what would you lose?&rdquo; &mdash; it measures dependency through loss framing (revealed dependency). It activates loss aversion &mdash; the tendency to react more strongly to loss than to gain (Kahneman &amp; Tversky, 1979). Ellis himself deliberately avoided the word &ldquo;satisfaction&rdquo; because he believed &ldquo;a good manager is never satisfied.&rdquo;</p>
@@ -389,7 +340,7 @@
     </div>
 
     <!-- THE NUMBERS — EN -->
-    <div class="ecosystem-section" data-lang="en">
+    <div class="ecosystem-section">
         <div class="section-label">The Numbers</div>
         <table class="data-table">
             <thead>
@@ -416,7 +367,7 @@
     </div>
 
     <!-- THE DISTORTION — EN -->
-    <div class="pattern-section" data-lang="en">
+    <div class="pattern-section">
         <div class="section-label">How The Industry Broke The Framework</div>
         <p>The First Round Review article became one of the most-read startup posts of the decade. And almost everyone took the wrong lesson from it.</p>
         <p><strong>What they took:</strong> &ldquo;40% is the magic number. Run the survey. If you hit 40%, you have PMF.&rdquo;</p>
@@ -426,7 +377,7 @@
     </div>
 
     <!-- FIVE SIGNALS — EN -->
-    <div class="gap-section" data-lang="en">
+    <div class="gap-section">
         <div class="section-label">Five Signals The Company Isn&rsquo;t Reading</div>
 
         <blockquote class="void-quote">
@@ -461,7 +412,7 @@
     </div>
 
     <!-- THE QUESTION — EN -->
-    <div class="prediction-section" data-lang="en">
+    <div class="prediction-section">
         <div class="section-label">The Question Nobody Is Asking</div>
         <div class="prediction-content">
             <p>58% &ldquo;very disappointed&rdquo; was measured for Superhuman Mail &mdash; a focused email client for busy executives handling 100-200 emails daily.</p>
@@ -473,153 +424,22 @@
     </div>
 
     <!-- METHODOLOGY — EN -->
-    <div class="methodology" data-lang="en">
+    <div class="methodology">
         Based on analysis of First Round Review, Sacra, TechCrunch, CNBC, Hacker News, Tracxn, Windows Central, The Branding Journal, Futurism, Business of Software Conference, and public product data &mdash; collected March 2026
     </div>
 
     <!-- CTA — EN -->
-    <div class="cta-section" data-lang="en">
+    <div class="cta-section">
         <p>This analysis maps one pattern. The full TrendLoom methodology identified 4 additional structural signals in Superhuman&rsquo;s market &mdash; including one that reveals what the PMF framework measures vs. what it misses for assembled platforms.</p>
         <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">Book a Conversation with Elena</a>
     </div>
 
-    <!-- ==================== RUSSIAN ==================== -->
-
-    <!-- THE MIRROR — RU -->
-    <div class="mirror-section" data-lang="ru">
-        <div class="section-label">Чему Superhuman научил мир</div>
-        <div class="mirror-content">
-            <p>&laquo;Что бы вы почувствовали, если бы больше не могли пользоваться Superhuman?&raquo; &mdash; В 2017 году Рахул Вохра взял простой вопрос Шона Эллиса и превратил его в самый массово принятый фреймворк измерения product-market fit в истории стартапов. Методология вирусно распространилась через Y Combinator, стала обязательным чтением для фаундеров на ранней стадии и породила десятки SaaS-инструментов для проведения &laquo;PMF-опроса&raquo;.</p>
-        </div>
-    </div>
-
-    <!-- KEY FINDING — RU -->
-    <div class="key-finding" data-lang="ru">
-        <h2>Сигнал, который они изобрели (и перестали читать)</h2>
-        <p>Superhuman создал один из самых мощных инструментов чтения поведенческих сигналов в истории стартапов. Потом индустрия свела его к метрике. А сама компания перестала применять собственную методологию &mdash; переименовав продукт с 40M пользователей на основе нарратива вместо сигнала, измеряя скорость email вместо зависимости и собирая четыре приобретения в suite, не задав вопрос, который сделал их знаменитыми.</p>
-    </div>
-
-    <!-- THE METHOD — RU -->
-    <div class="pattern-section" data-lang="ru">
-        <div class="section-label">Метод: сигнал потери, а не опрос удовлетворённости</div>
-        <p>Шон Эллис создал тест примерно в 2009 году после анализа 100+ стартапов. Вопрос &mdash; &laquo;Что бы вы почувствовали, если бы больше не могли пользоваться этим продуктом?&raquo; &mdash; это не опрос удовлетворённости. Это <strong>сигнал потери</strong>.</p>
-        <p>Разница критична. Опрос удовлетворённости спрашивает &laquo;нравится ли вам это?&raquo; &mdash; он измеряет отношение (stated preference). Вопрос Эллиса спрашивает &laquo;что вы потеряете?&raquo; &mdash; он измеряет зависимость через фрейминг потери (revealed dependency). Он активирует loss aversion &mdash; склонность сильнее реагировать на потерю, чем на приобретение (Kahneman &amp; Tversky, 1979). Сам Эллис намеренно убрал слово &laquo;satisfaction&raquo;, потому что считал, что &laquo;a good manager is never satisfied.&raquo;</p>
-        <p>Инновация Вохры была тройной: <strong>сегментация</strong> (выделить High-Expectation Customer &mdash; для Superhuman это &laquo;Nicole&raquo;, занятой руководитель с 100-200 письмами в день), <strong>коррекция</strong> (50% роадмапа на удвоение того, что любят &laquo;very disappointed&raquo;, 50% на устранение барьеров для &laquo;somewhat disappointed&raquo;), и <strong>цикл</strong> (квартальное измерение, PMF как OKR).</p>
-        <p>Результат: <strong>22% &rarr; 32% &rarr; 48% &rarr; 58%</strong> за 18 месяцев. Один из самых высоких публично раскрытых PMF-скоров.</p>
-    </div>
-
-    <!-- THE NUMBERS — RU -->
-    <div class="ecosystem-section" data-lang="ru">
-        <div class="section-label">Цифры</div>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Метрика</th>
-                    <th>Значение</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>PMF Score (пик)</td><td>58% &laquo;very disappointed&raquo;</td></tr>
-                <tr><td>ARR (конец 2024)</td><td>$36.5M</td></tr>
-                <tr><td>Платящие клиенты</td><td>~70,000</td></tr>
-                <tr><td>Пиковая валюация (авг 2021)</td><td>$825M</td></tr>
-                <tr><td>Привлечено инвестиций</td><td>$118M</td></tr>
-                <tr><td>Годовой retention</td><td>&gt;90%</td></tr>
-                <tr><td>Net Revenue Retention</td><td>&gt;120%</td></tr>
-                <tr><td>Рост YoY</td><td>60%+</td></tr>
-                <tr><td>Куплен Grammarly (июл 2025)</td><td>Оц. $300-500M (ниже пика)</td></tr>
-                <tr><td>Grammarly ARR (май 2025)</td><td>$700M+</td></tr>
-                <tr><td>Grammarly DAU</td><td>40M+</td></tr>
-            </tbody>
-        </table>
-        <p class="evidence-line">58% PMF. &gt;90% retention. &gt;120% NRR. 60%+ рост. И всё же &mdash; exit ниже пиковой валюации. Метрика предсказала лояльность продукту. Метрика не предсказала жизнеспособность бизнеса. Причина: ограниченный адресный рынок. $30-40/мес за email при бесплатном Gmail.</p>
-    </div>
-
-    <!-- THE DISTORTION — RU -->
-    <div class="pattern-section" data-lang="ru">
-        <div class="section-label">Как индустрия сломала фреймворк</div>
-        <p>Статья в First Round Review стала одной из самых читаемых стартап-статей десятилетия. И почти все извлекли из неё неправильный урок.</p>
-        <p><strong>Что взяли:</strong> &laquo;40% &mdash; магическое число. Проведи опрос. Если набрал 40% &mdash; у тебя PMF.&raquo;</p>
-        <p><strong>Что фреймворк на самом деле говорит:</strong> Порог 40% &mdash; это диагностическая отправная точка, а не финиш. Сам Эллис: &laquo;I don&rsquo;t think it&rsquo;s that firm. To me, the real power is having some kind of target for the team to be shooting for.&raquo; Сила была в системе &mdash; сегментируй, корректируй, повторяй. Не в числе.</p>
-        <p><strong>Результат:</strong> &laquo;Провести PMF-опрос&raquo; стало галочкой. Buffer провёл опрос среди ультра-вовлечённой группы и получил 78% &laquo;very disappointed&raquo; &mdash; но retention у широкой базы был слабым. Назначение опроса &laquo;было неправильно понято почти 9 лет&raquo; &mdash; данные о &laquo;disappointment&raquo; лучше использовать как фильтр для понимания того, как пользователи интерпретируют продукт, а не как оценку &laquo;сдал/не сдал&raquo;.</p>
-        <p>Это как взять термометр, отметить, что 36.6&deg;C означает здоровье, и считать число целью, а не диагностическим инструментом.</p>
-    </div>
-
-    <!-- FIVE SIGNALS — RU -->
-    <div class="gap-section" data-lang="ru">
-        <div class="section-label">Пять сигналов, которые компания не читает</div>
-
-        <blockquote class="void-quote">
-            <p>&laquo;Superhuman is vague, corporate, sounds like an AI chatbot, and most importantly, means absolutely nothing.&raquo;</p>
-            <cite> - Реакция tech-прессы на переименование Grammarly &rarr; Superhuman, октябрь 2025</cite>
-        </blockquote>
-        <p class="signal-context">Grammarly &mdash; бренд с 15-летней узнаваемостью, 40M ежедневных пользователей, $700M ARR &mdash; был переименован в Superhuman. Если бы компания применила свой собственный фреймворк: &laquo;Что бы вы почувствовали, если бы больше не могли пользоваться Grammarly?&raquo; Спросите 40M пользователей. Измерьте зависимость от старого имени, прежде чем уничтожать его.</p>
-
-        <blockquote class="void-quote">
-            <p>&laquo;You rapacious information and identity thieves better get ready for me to go full McConaughey on you.&raquo;</p>
-            <cite> - Kara Swisher, после обнаружения, что &laquo;Expert Review&raquo; Grammarly использовал её личность без согласия, март 2026</cite>
-        </blockquote>
-        <p class="signal-context">Компания, чья философия &mdash; &laquo;AI that amplifies people&raquo;, создала функцию, которая буквально заменяет людей AI-имитациями &mdash; без согласия. Stephen King, Kara Swisher, Julia Angwin стали AI-&laquo;экспертами&raquo;, не зная об этом. Коллективный иск. Функция отключена за дни. Это не баг. Это поведенческий сигнал: компания перешла от чтения потребностей пользователей к созданию того, что выглядит впечатляюще.</p>
-
-        <blockquote class="void-quote">
-            <p>&laquo;Is this really a good metric to aim for? Don&rsquo;t we want productivity tooling to result in less email, not more?&raquo;</p>
-            <cite> - Комментатор Hacker News, о заявлении Superhuman, что пользователи отправляют на 72% больше писем в час</cite>
-        </blockquote>
-        <p class="signal-context">Компания, которая изобрела измерение зависимости, теперь измеряет скорость. &laquo;72% больше писем в час&raquo; &mdash; это метрика объёма, а не impact. Другой комментатор HN: &laquo;Пользователи Superhuman, с которыми я работал, начинают пробегать письма глазами и отправлять ультракороткие ответы.&raquo;</p>
-
-        <blockquote class="void-quote">
-            <p>&laquo;This reminds me exactly of Dropbox&rsquo;s transformation from simple, reliable file storage into bloated software.&raquo;</p>
-            <cite> - Комментатор Hacker News, о слиянии Grammarly-Superhuman</cite>
-        </blockquote>
-        <p class="signal-context">Четыре продукта от разных компаний &mdash; Grammarly (2009), Coda (2014), Superhuman Mail (2014), Rows (2026) &mdash; собраны под одним именем за 15 месяцев. Тем временем: Microsoft запускает 365 E7 ($99/user/month с Copilot, май 2026). Google включает Gemini в Workspace бесплатно. Две платформы, которым принадлежит email-инфраструктура, встраивают AI напрямую. Собранный suite против нативных платформ.</p>
-
-        <blockquote class="void-quote">
-            <p>&laquo;The undisclosed acquisition price implies a down-round exit at best, and a fire sale at worst.&raquo;</p>
-            <cite> - Отраслевой аналитик, о покупке Superhuman Mail компанией Grammarly за ориентировочные $300-500M при пиковой валюации $825M</cite>
-        </blockquote>
-        <p class="signal-context">Standalone email-инструменты не выживают. Postbox &mdash; куплен и закрыт (2024). Skiff &mdash; куплен Notion, закрыт (2024). Salesforce Engage for Gmail &mdash; отменён (2024). Superhuman Mail &mdash; куплен ниже пиковой валюации (2025). Паттерн: email &mdash; это feature платформы, а не платформа.</p>
-    </div>
-
-    <!-- THE QUESTION — RU -->
-    <div class="prediction-section" data-lang="ru">
-        <div class="section-label">Вопрос, который никто не задаёт</div>
-        <div class="prediction-content">
-            <p>58% &laquo;very disappointed&raquo; было измерено для Superhuman Mail &mdash; сфокусированного email-клиента для занятых руководителей с 100-200 письмами в день.</p>
-            <p><strong>Этот продукт больше не существует в том виде, в каком его измерили.</strong></p>
-            <p>Сегодня &laquo;Superhuman&raquo; &mdash; это Grammarly + Coda + Mail + Go + Rows. Другой продукт. Другой CEO. Другой бренд. Другая аудитория &mdash; от &laquo;Nicole&raquo; с 200 письмами до 40M пользователей Grammarly.</p>
-            <p>Если задать тот же вопрос сегодня &mdash; &laquo;Что бы вы почувствовали, если бы больше не могли пользоваться Superhuman?&raquo; &mdash; кто именно ответит? Пользователь Grammarly, который не понимает, почему его writing tool теперь называется как email app? Пользователь Coda, чей Coda Brain был закрыт ради Superhuman Go? Пользователь Rows, чей продукт закрывается в мае?</p>
-            <p><strong>PMF &mdash; это не число. Это relationship. А relationship не переносится через acquisition.</strong></p>
-        </div>
-    </div>
-
-    <!-- METHODOLOGY — RU -->
-    <div class="methodology" data-lang="ru">
-        На основе анализа First Round Review, Sacra, TechCrunch, CNBC, Hacker News, Tracxn, Windows Central, The Branding Journal, Futurism, Business of Software Conference и публичных данных о продукте &mdash; собрано в марте 2026
-    </div>
-
-    <!-- CTA — RU -->
-    <div class="cta-section" data-lang="ru">
-        <p>Этот анализ описывает один паттерн. Полная методология TrendLoom выявила ещё 4 структурных сигнала на рынке Superhuman &mdash; включая один, который показывает, что фреймворк PMF измеряет и что он пропускает для собранных из acquisitions платформ.</p>
-        <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">Назначить разговор с Еленой</a>
-    </div>
 
     <!-- FOOTER -->
     <div style="text-align:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid #e8ddd0;">
         <a href="privacy.html" style="font-size:0.7rem;color:#888888;text-decoration:none;">Privacy Policy</a>
     </div>
 
-    <script>
-    function switchLang(lang) {
-        document.querySelectorAll('[data-lang]').forEach(function(el) {
-            el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
-        });
-        document.querySelectorAll('.lang-btn').forEach(function(btn) {
-            btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
-        });
-        document.documentElement.lang = lang;
-    }
-    switchLang('en');
-    </script>
 
 </body>
 </html>
