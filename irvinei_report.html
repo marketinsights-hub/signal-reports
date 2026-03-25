@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Report — IRVINEi</title>
+    <meta name="description" content="Market intelligence report for IRVINEi OVAL — The Privacy Fault Line">
+    <meta property="og:title" content="IRVINEi — The Privacy Fault Line">
+    <meta property="og:description" content="Your 'privacy-first' promise is contradicted by your own pricing page — in a market that just caught the last company making that claim.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #e5e5e5;
+            padding-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .company-name {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.25rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0.25rem 0 1.5rem;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: #1a1a1a;
+        }
+
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Key Finding Box */
+        .key-finding {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin: 2rem 0 3rem;
+        }
+
+        .key-finding .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .key-finding .finding {
+            font-size: 1.375rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #ffffff;
+        }
+
+        /* The Mirror */
+        .mirror-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .mirror-section .mirror-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+
+        .mirror-section blockquote {
+            font-size: 1.125rem;
+            font-style: italic;
+            color: #333;
+            border-left: 3px solid #ccc;
+            padding-left: 1.25rem;
+            margin: 0.5rem 0;
+        }
+
+        /* The Gap */
+        .gap-section {
+            margin: 2.5rem 0;
+        }
+
+        .gap-section p {
+            font-size: 1.0625rem;
+            color: #333;
+        }
+
+        .void-specimen {
+            background: #ffffff;
+            border-left: 4px solid #0066cc;
+            padding: 1.5rem;
+            margin: 1.25rem 0;
+            font-style: italic;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .void-specimen cite {
+            display: block;
+            margin-top: 0.75rem;
+            font-style: normal;
+            font-size: 0.8125rem;
+            color: #888;
+        }
+
+        /* The Pattern */
+        .pattern-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2.5rem 0;
+        }
+
+        .pattern-section .pattern-name {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+
+        .evidence-line {
+            font-size: 0.875rem;
+            color: #666;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Perception Map */
+        .perception-map {
+            margin: 2.5rem 0;
+            overflow-x: auto;
+        }
+
+        .perception-map table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9375rem;
+        }
+
+        .perception-map th {
+            background: #f0f0f0;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .perception-map td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .perception-map .highlight-row {
+            background: #fff8f0;
+        }
+
+        /* Shadow */
+        .shadow {
+            background: #fff9e6;
+            border-left: 4px solid #ffb800;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .shadow h3 {
+            margin-top: 0;
+            color: #996d00;
+        }
+
+        .shadow p {
+            color: #444;
+        }
+
+        /* Prediction */
+        .prediction {
+            background: #f0f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .prediction h3 {
+            margin-top: 0;
+            color: #004d99;
+        }
+
+        /* CTA */
+        .cta-section {
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .cta-section p {
+            font-size: 1.0625rem;
+            color: #444;
+            max-width: 550px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #0066cc;
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #0052a3;
+        }
+
+        /* Methodology */
+        .methodology {
+            font-size: 0.8125rem;
+            color: #999;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e5e5e5;
+            text-align: center;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .key-finding {
+                padding: 1.75rem;
+            }
+
+            .key-finding .finding {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">TrendLoom</div>
+            <div class="tagline">Market Signal Report</div>
+        </header>
+
+        <main>
+            <div class="company-name">IRVINEi &middot; OVAL</div>
+            <h1>The Privacy Fault Line</h1>
+
+            <!-- Key Finding Box -->
+            <div class="key-finding">
+                <div class="label">Key Finding</div>
+                <div class="finding">IRVINEi's "privacy-first" promise is contradicted by their own pricing page&nbsp;&mdash; in a market that just caught the last company making that exact claim.</div>
+            </div>
+
+            <!-- The Mirror -->
+            <div class="mirror-section">
+                <div class="mirror-label">What You Say</div>
+                <blockquote>"Processing happens inside the device, not in the cloud. Your data stays private. Your alerts are instant. And your subscription costs are lower."</blockquote>
+                <p style="margin-top: 1rem; font-size: 0.9375rem; color: #666;">— IRVINEi homepage</p>
+            </div>
+
+            <!-- The Gap -->
+            <div class="gap-section">
+                <h2>The Gap</h2>
+                <p>OVAL's homepage makes a clear promise: your data stays on the device, not in the cloud. But two clicks away, the Guard Plans page tells a different story. Subscription tiers are gated on <em>cloud storage</em>&nbsp;&mdash; from 3&nbsp;days (Free) to 180&nbsp;days (Premium). The AI features that make OVAL more than a doorbell? They're locked behind Pro-tier cloud plans.</p>
+                <p>This isn't a minor messaging inconsistency. It's a structural contradiction between how the product is <em>positioned</em> and how it's <em>monetized</em>. And it's happening in a market that was recently burned by this exact pattern.</p>
+            </div>
+
+            <h2>What the Market Is Saying</h2>
+
+            <div class="void-specimen">
+                "Processing happens inside the device, not in the cloud. Your data stays private."&nbsp;&mdash; then, two clicks away: cloud storage from 3&nbsp;days to 180&nbsp;days, with AI features gated behind paid cloud tiers.
+                <cite>— IRVINEi website, homepage vs. Guard Plans page</cite>
+            </div>
+
+            <div class="void-specimen">
+                "What happens if the brand I chose ends support or shuts down?"&nbsp;&mdash; documented as one of the biggest fears when investing in smart home gadgets, with real precedent: one major smart home company shut down servers without notice, bricking all devices overnight.
+                <cite>— Smart home community discussions</cite>
+            </div>
+
+            <div class="void-specimen">
+                A leading privacy-first doorbell competitor was caught sending locally-stored data to the cloud without user consent&nbsp;&mdash; resulting in a $450K regulatory settlement and a class action lawsuit. The exact same positioning. The exact same promise. Broken.
+                <cite>— Tech journalism &amp; regulatory filings, 2022–2023</cite>
+            </div>
+
+            <!-- The Pattern -->
+            <div class="pattern-section">
+                <div class="pattern-name">The Privacy Fault Line</div>
+                <p>In smart home security, "privacy-first" has become the most valuable&nbsp;&mdash; and most fragile&nbsp;&mdash; positioning claim a company can make. After a major competitor was caught lying about local storage, after the market leader won an anti-award for AI surveillance at CES 2026, and after 87% of doorbell buyers reported not knowing how their data is used, <strong>trust is the scarcest resource in this category</strong>.</p>
+                <p>IRVINEi occupies the exact positioning quadrant where trust was last destroyed. The difference between claiming "privacy-first" and <em>being</em> privacy-first is the fault line&nbsp;&mdash; and the company's own pricing page shows which side of it the business model stands on.</p>
+                <p class="evidence-line">Evidence triangulated across IRVINEi website copy, smart home community discussions, crowdfunding data, tech regulatory filings, and industry market data.</p>
+            </div>
+
+            <!-- Perception Map -->
+            <div class="perception-map">
+                <h2>The Trust Landscape</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Privacy Claim</th>
+                            <th>Revenue Model</th>
+                            <th>Trust Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ring</strong></td>
+                            <td>Cloud-first (transparent)</td>
+                            <td>Subscription-locked</td>
+                            <td>Under fire (CES "Worst in Show")</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eufy</strong></td>
+                            <td>"Local storage only"</td>
+                            <td>Hardware margin</td>
+                            <td>Destroyed ($450K fine, class action)</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>IRVINEi / OVAL</strong></td>
+                            <td>"Edge AI, data stays home"</td>
+                            <td>Cloud storage subscriptions</td>
+                            <td>Untested&nbsp;&mdash; contradiction visible</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DIY (Frigate + HA)</strong></td>
+                            <td>True local (verifiable)</td>
+                            <td>No vendor</td>
+                            <td>High trust, high complexity</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.8125rem; color: #888; margin-top: 0.75rem;">Based on user sentiment across community discussions and product reviews, not marketing claims.</p>
+            </div>
+
+            <!-- The Shadow -->
+            <div class="shadow">
+                <h3>What Your Market Is Not Saying</h3>
+                <p>A product positioning as "the world's first AI Home Hub"&nbsp;&mdash; with 23 patents, a CES&nbsp;2026 presence, and a Jarvis comparison from the CEO&nbsp;&mdash; has generated <strong>zero organic community discussion</strong>. No Reddit threads. No independent YouTube reviews. No inclusion in any "best smart doorbell" roundup.</p>
+                <p>The market hasn't rejected OVAL. It hasn't <em>noticed</em> OVAL. And when it does, the first test won't be features or price&nbsp;&mdash; it will be trust. The trust gauntlet that every new entrant must now run was built by the failures of the companies that came before you.</p>
+            </div>
+
+            <!-- The Prediction -->
+            <div class="prediction">
+                <h3>Where This Is Heading</h3>
+                <p>Signals across smart home communities show a growing migration toward verifiably local, vendor-independent solutions. Users are building DIY alternatives with Frigate and Home Assistant&nbsp;&mdash; tolerating steep learning curves to escape subscription lock-in and broken privacy promises. <strong>The gap between "I want true local AI" and "I can build it myself" is a product opportunity that no credible player has claimed.</strong> But credible is the operative word. The company that fills this gap must pass the trust test that two competitors have already failed.</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <p>We mapped 4 additional patterns that don't fit on a single page. One of them reveals a positioning window in the smart home market that none of the major players&nbsp;&mdash; Ring, Nest, Eufy, or Arlo&nbsp;&mdash; have credibly claimed, and it's directly adjacent to where your early adopters are already looking.</p>
+                <a href="https://calendly.com/elena-trendloom/discovery-call" class="cta-button">Book a Signal Session &rarr;</a>
+            </div>
+
+            <!-- Methodology -->
+            <div class="methodology">
+                Based on analysis of 22 data points across community discussions, crowdfunding platforms, product reviews, tech journalism, and regulatory filings. March 2026.
+            </div>
+        </main>
+
+        <footer>
+            <p><strong>TrendLoom</strong></p>
+            <p>The companies that name it first own the category.</p>
+        </footer>
+    </div>
+</body>
+</html>
