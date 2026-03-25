@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Report — TrendLoom.io</title>
+    <meta property="og:title" content="Signal Report — CLaiMB.ai | TrendLoom.io">
+    <meta property="og:description" content="The Scorecard Ceiling — Enterprise AI maturity scores are falling despite record investment.">
+    <meta property="og:url" content="https://marketinsights-hub.github.io/signal-reports/claimb_report.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* TrendLoom Signal Report — Template v3.1 (TrendLoom.io Design System) */
+        :root {
+            --primary: #262121;
+            --accent: #fe6037;
+            --accent-light: #ff7a56;
+            --bg: #fefaf6;
+            --text: #262121;
+            --text-light: #555555;
+            --text-muted: #888888;
+            --light-bg: #faebdc;
+            --border: #e8ddd0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .header .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+        }
+        .header .logo-icon { height: 20px; width: auto; }
+        .header .logo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--primary);
+        }
+        .header .logo-text .loom { color: var(--accent); }
+        .header .logo-text .io { color: var(--text-muted); font-weight: 500; font-size: 0.85em; }
+        .header .report-label {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+        .header .meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; }
+        .section-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        .mirror-section { margin-bottom: 2.5rem; }
+        .mirror-content {
+            font-style: italic;
+            color: var(--text-light);
+            border-left: 3px solid var(--border);
+            padding-left: 1.25rem;
+            font-size: 0.95rem;
+        }
+        .mirror-content p { margin-bottom: 0.75rem; }
+        .mirror-source { font-size: 0.7rem; color: var(--text-muted); font-style: normal; }
+        .key-finding {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2.5rem 0;
+            box-shadow: 8px 8px 16px 4px rgba(0,0,0,0.05);
+        }
+        .key-finding h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+        .key-finding p { font-size: 1rem; line-height: 1.6; color: rgba(255,255,255,0.9); }
+        .gap-section { margin-bottom: 2.5rem; }
+        .void-quote {
+            background: var(--light-bg);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .void-quote p { font-style: italic; font-size: 0.95rem; line-height: 1.5; color: var(--text); }
+        .void-quote cite { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: normal; }
+        .pattern-section { margin-bottom: 2.5rem; }
+        .pattern-section h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--primary); }
+        .pattern-section p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .evidence-line { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+        .prediction-section { margin-bottom: 2.5rem; }
+        .prediction-content {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+        .prediction-content p { margin-bottom: 0.5rem; }
+        .opening-section { margin-bottom: 2.5rem; }
+        .opening-content {
+            font-size: 0.95rem;
+            color: var(--text);
+            border-left: 3px solid var(--accent);
+            padding-left: 1.25rem;
+        }
+        .opening-content p { margin-bottom: 0.5rem; }
+        .methodology {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            font-style: italic;
+            letter-spacing: 0.3px;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        .cta-section p { font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text); }
+        .cta-button {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.75rem 2.5rem;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: background 0.2s ease;
+            box-shadow: 8px 8px 16px 4px rgba(0,0,0,0.05);
+        }
+        .cta-button:hover { background: var(--accent-light); }
+        @media (max-width: 600px) {
+            body { padding: 1.5rem 1rem; }
+            .key-finding { padding: 1.5rem; }
+            .key-finding h2 { font-size: 1.15rem; }
+            .void-quote { padding: 0.75rem 1rem; }
+            .cta-section { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <div class="header">
+        <a href="https://trendloom.io" class="logo-link">
+            <img src="data:image/png;base64,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" class="logo-icon" alt="TrendLoom">
+            <span class="logo-text">Trend<span class="loom">Loom</span><span class="io">.io</span></span>
+        </a>
+        <div class="report-label">Signal Report</div>
+        <div class="meta">
+            <span>CLaiMB.ai &mdash; March 2026</span>
+        </div>
+    </div>
+
+    <!-- 2. THE MIRROR -->
+    <div class="mirror-section">
+        <div class="section-label">What You Say You Do</div>
+        <div class="mirror-content">
+            <p>You're building "the intelligence layer every enterprise deserves" &mdash; an AI Command Center that continuously monitors AI maturity across 75 dimensions, benchmarks against named peers, and generates board-ready roadmaps. You call it a new category &mdash; the Enterprise Intelligence Operating System &mdash; "in a $200B+ market with no incumbent."</p>
+            <span class="mirror-source">&mdash; claimb.ai homepage</span>
+        </div>
+    </div>
+
+    <!-- 3. KEY FINDING BOX -->
+    <div class="key-finding">
+        <h2>The Scorecard Ceiling</h2>
+        <p>Enterprise AI maturity scores are falling despite record investment. The market has more assessment frameworks than success stories. The opportunity isn't to build a better mirror &mdash; it's to close the gap between knowing and doing that every framework hits.</p>
+    </div>
+
+    <!-- 4. THE GAP — VOID LANGUAGE SPECIMENS -->
+    <div class="gap-section">
+        <div class="section-label">What Your Market Is Actually Saying</div>
+        <blockquote class="void-quote">
+            <p>Enterprise AI maturity scores dropped from 44 to 35 on a 100-point scale year-over-year &mdash; despite massive investment increases. "The rapid pace of innovation is leading to a decline in AI maturity." The better we measure, the worse we score.</p>
+            <cite>&mdash; ServiceNow Enterprise AI Maturity Index 2025, global survey of 4,500 executives</cite>
+        </blockquote>
+        <blockquote class="void-quote">
+            <p>"A majority of CIOs admit they're not quite sure what to do and where to start." Only 5% of companies are achieving AI value at scale. 60% are achieving no material value at all &mdash; despite substantial investment.</p>
+            <cite>&mdash; CIO.com, executive research 2025</cite>
+        </blockquote>
+        <blockquote class="void-quote">
+            <p>"Leaders get locked into long, costly discovery phases with traditional consultants that are all about theory and very little action." 95% of AI pilots fail &mdash; the cause is not technology. It's governance, readiness, and executive ownership.</p>
+            <cite>&mdash; VentureBeat, MIT research, CIO Dive</cite>
+        </blockquote>
+    </div>
+
+    <!-- 5. THE PATTERN -->
+    <div class="pattern-section">
+        <div class="section-label">The Pattern</div>
+        <h3>The Scorecard Ceiling</h3>
+        <p>The enterprise AI maturity assessment space is one of the most populated in B2B tech. Gartner has a maturity model. MITRE has one. MIT published a framework. Cisco built a readiness index. ServiceNow runs an annual global survey. INCIT and Detecon already launched a product called AIMRI. Every Big&nbsp;4 firm sells this as a service.</p>
+        <p>And yet: scores are dropping. Pilots are dying. 95% never reach production. The problem isn't that enterprises can't see where they stand &mdash; they've been shown their reflection by a dozen frameworks. <strong>The problem is that knowing hasn't produced doing.</strong> Every assessment in this market hits the same ceiling: the gap between scorecard and action.</p>
+        <p>CLaiMB's "living command center" framing gets closer to this truth than most competitors. But the positioning &mdash; "new category, no incumbent" &mdash; claims empty space that is visibly occupied. The CIO who hears this claim and knows about Gartner's toolkit, MITRE's model, and ServiceNow's index will question the market awareness, not the product.</p>
+        <p class="evidence-line">Triangulated across ServiceNow global index, MIT/McKinsey research, Gartner/MITRE/Cisco frameworks, CIO executive surveys, and CLaiMB website positioning.</p>
+    </div>
+
+    <!-- 6. PREDICTION / SHADOW SIGNAL -->
+    <div class="prediction-section">
+        <div class="section-label">What This Signals</div>
+        <div class="prediction-content">
+            <p>The word "readiness" is quietly becoming toxic in enterprise AI. ServiceNow's data shows organizations getting <em>less</em> ready over time despite more investment. The concept implies a threshold &mdash; but AI transformation is continuous. There is no "ready."</p>
+            <p><strong>The next positioning advantage in this space goes to the platform that drops the maturity language entirely</strong> and reframes around velocity: not "where do you stand?" but "how fast are you closing the gap between what you know and what you've shipped?" That's the question CIOs are actually being asked by their boards &mdash; and no framework currently answers it.</p>
+            <p>CLaiMB's product capabilities (simulation lab, continuous monitoring, board-ready outputs) are closer to this framing than the AIMRI positioning suggests. The product may already be ahead of its own messaging.</p>
+        </div>
+    </div>
+
+    <!-- 7. THE OPENING -->
+    <div class="opening-section">
+        <div class="section-label">The Opening</div>
+        <div class="opening-content">
+            <p>Repositioning from "the intelligence layer for AI maturity" to "the execution engine for AI transformation" &mdash; and replacing the "new category, no incumbent" claim with an honest reckoning of what the existing frameworks get wrong &mdash; would give CLaiMB the credibility advantage that early-stage enterprise platforms live or die on.</p>
+            <p>The Accenture origin story isn't a liability. It's the strongest trust signal you have. The CIO wants to hear: "We built these assessments at Accenture. We saw them fail. So we built the thing that comes after the assessment."</p>
+        </div>
+    </div>
+
+    <!-- 8. METHODOLOGY MICRO-LINE -->
+    <div class="methodology">
+        Based on analysis of 20 data points across industry research, market frameworks, executive surveys, tech journalism, and company positioning, collected March 2026
+    </div>
+
+    <!-- 9. CTA -->
+    <div class="cta-section">
+        <p>We mapped 4 additional patterns in the enterprise AI strategy space that don't fit on a single page. One of them reveals how the language CIOs use to describe their AI challenges has shifted in the last 12 months &mdash; in a direction that creates a positioning opening for the company that reads it first.</p>
+        <a href="https://cal.com/trendloom/trendloom-intro-call" class="cta-button">Book a Conversation with Elena</a>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;padding-top:1rem;border-top:1px solid #e8ddd0;">
+        <a href="privacy.html" style="font-size:0.7rem;color:#888888;text-decoration:none;">Privacy Policy</a>
+    </div>
+
+    <!-- TrendLoom Analytics — Airtable Direct -->
+    <script>
+    (function(){
+      var T=atob('cGF0clVxOXdjSk9hMGNXdzUuNTk0YzRhMWI0OWZhNzZhNGZjNDQ3N2ZhY2ExY2VmNzY4MjNlYjk2OGEzOTY4ZGYzMGEwYjRhNDA3NzQ2MjlkNA==');
+      var B='appaz1L5luqIKZgHL';
+      var U='https://api.airtable.com/v0/'+B+'/PageViews';
+      var p=new URLSearchParams(location.search);
+      var base={
+        report:location.pathname.split('/').pop()||'',
+        cid:p.get('cid')||'',
+        page_url:location.href,
+        user_agent:navigator.userAgent||''
+      };
+      var t0=Date.now(),mxS=0,exited=false;
+      function trk(){
+        var st=window.pageYOffset||document.documentElement.scrollTop;
+        var dh=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)-window.innerHeight;
+        if(dh>0){var pc=Math.round(st/dh*100);if(pc>mxS)mxS=pc;}
+      }
+      function send(ev){
+        var fields={
+          'Report':base.report,'CID':base.cid,'Event':ev,
+          'Scroll %':mxS,'Time on Page':Math.round((Date.now()-t0)/1000),
+          'Page URL':base.page_url,'User Agent':base.user_agent.substring(0,500),
+          'Timestamp':new Date().toISOString()
+        };
+        fetch(U,{method:'POST',headers:{'Authorization':'Bearer '+T,'Content-Type':'application/json'},
+          body:JSON.stringify({fields:fields}),keepalive:true}).catch(function(){});
+      }
+      send('page_view');
+      window.addEventListener('scroll',trk,{passive:true});
+      var btns=document.querySelectorAll('.cta-button');
+      for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){send('cta_click');});}
+      document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden'&&!exited){exited=true;send('page_exit');}});
+    })();
+    </script>
+
+</body>
+</html>
